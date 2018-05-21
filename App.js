@@ -7,8 +7,6 @@
 import React, { Component } from 'react';
 import {
   Platform,
-  StyleSheet,
-  Text,
   View,
   StatusBar,
 } from 'react-native';
@@ -26,14 +24,14 @@ type Props = {};
 export default class App extends Component<Props> {
 
   componentDidMount () {
-    SplashScreen.hide()
+    SplashScreen.hide();
   }
   render() {
     return (
       <View>
         <StatusBar
-        barStyle="light-content"
-        backgroundColor="#1b2719"
+          barStyle="light-content"
+          backgroundColor="#1b2719"
         />
         <HomeRender instructions={instructions} />
       </View>
