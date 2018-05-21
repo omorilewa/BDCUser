@@ -10,9 +10,10 @@ import {
   StyleSheet,
   Text,
   View,
-  StatusBar
+  StatusBar,
 } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import HomeRender from './common/components/HomeRender';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -29,41 +30,14 @@ export default class App extends Component<Props> {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <View>
         <StatusBar
-          barStyle="light-content"
-          backgroundColor="#1b2719"
+        barStyle="light-content"
+        backgroundColor="#1b2719"
         />
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <HomeRender instructions={instructions} />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#4F6D7A',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    color: '#F5FCFF',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#F5FCFF',
-    marginBottom: 5,
-  },
-});
