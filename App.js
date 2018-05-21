@@ -5,7 +5,12 @@
  */
 
 import React, { Component } from 'react';
-import { Platform } from 'react-native';
+import {
+  Platform,
+  View,
+  StatusBar,
+} from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 import HomeRender from './common/components/HomeRender';
 
 const instructions = Platform.select({
@@ -17,9 +22,19 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+
+  componentDidMount () {
+    SplashScreen.hide();
+  }
   render() {
     return (
-      <HomeRender instructions={instructions} />
+      <View>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="#1b2719"
+        />
+        <HomeRender instructions={instructions} />
+      </View>
     );
   }
 }
