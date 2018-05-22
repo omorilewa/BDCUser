@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HomeRender /> renders the HomeRender component correctly 1`] = `
+exports[`<Rates /> renders the Rates component correctly 1`] = `
 <View
   style={
     Object {
@@ -23,7 +23,7 @@ exports[`<HomeRender /> renders the HomeRender component correctly 1`] = `
       }
     }
   >
-    Welcome to React Native!
+    Welcome to Naija BDC
   </Text>
   <Text
     accessible={true}
@@ -37,21 +37,7 @@ exports[`<HomeRender /> renders the HomeRender component correctly 1`] = `
       }
     }
   >
-    To get started, edit App.js
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#333333",
-        "marginBottom": 5,
-        "textAlign": "center",
-      }
-    }
-  >
-    test that this renders correctly
+    Check out rates to get started
   </Text>
 </View>
 `;

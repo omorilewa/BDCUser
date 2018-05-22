@@ -1,0 +1,1 @@
+export { PrimaryNavigator } from './RootNavigation';
