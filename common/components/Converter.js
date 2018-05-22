@@ -1,34 +1,8 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Text, View } from 'react-native';
+import { StubStyles as styles } from '../styles';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-type ConverterProps = {
-
-};
-
-const Converter = (props: ConverterProps) => (
+const Converter = () => (
   <View style={styles.container}>
     <Text style={styles.welcome}>
     Converter
