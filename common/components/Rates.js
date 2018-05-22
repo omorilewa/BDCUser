@@ -25,19 +25,15 @@ const styles = StyleSheet.create({
 });
 
 type RatesProps = {
-  instructions: string
 };
 
 const Rates = (props: RatesProps) => (
   <View style={styles.container}>
     <Text style={styles.welcome}>
-    Welcome to React Native!
+    Welcome to Naija BDC
     </Text>
     <Text style={styles.instructions}>
-    To get started, edit App.js
-    </Text>
-    <Text style={styles.instructions}>
-      {props.instructions}
+    Check out rates to get started
     </Text>
   </View>
 );

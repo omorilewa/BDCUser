@@ -30,10 +30,10 @@ type OtherRatesProps = {
 const OtherRates = (props: OtherRatesProps) => (
   <View style={styles.container}>
     <Text style={styles.welcome}>
-    Welcome to React Native!
+    Show other rates
     </Text>
     <Text style={styles.instructions}>
-    To get started, edit App.js
+    Check out rates from other persons
     </Text>
   </View>
 );
