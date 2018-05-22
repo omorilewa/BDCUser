@@ -24,22 +24,18 @@ const styles = StyleSheet.create({
   },
 });
 
-type HomeRenderProps = {
-  instructions: string
+type AboutProps = {
 };
 
-const HomeRender = (props: HomeRenderProps) => (
+const About = (props: AboutProps) => (
   <View style={styles.container}>
     <Text style={styles.welcome}>
-    Welcome to React Native!
+    About us
     </Text>
     <Text style={styles.instructions}>
-    To get started, edit App.js
-    </Text>
-    <Text style={styles.instructions}>
-      {props.instructions}
+    Read all about us
     </Text>
   </View>
 );
 
-export default HomeRender;
+export default About;
