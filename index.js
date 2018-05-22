@@ -1,6 +1,6 @@
 import { AppRegistry } from 'react-native';
 import App from './App';
-import HomeRender from './common/components/HomeRender';
+import { Rate } from './src/screens';
 
 AppRegistry.registerComponent('BDCUser', () => App);
-AppRegistry.registerComponent('BDCUser', () => HomeRender);
+AppRegistry.registerComponent('BDCUser', () => Rate);
