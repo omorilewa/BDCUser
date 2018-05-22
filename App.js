@@ -7,14 +7,13 @@
 import React, { Component, Fragment } from 'react';
 import { StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import { PrimaryNavigator } from './common/navigation';
+import { PrimaryNavigator } from './src/navigation';
 
-type Props = {};
-export default class App extends Component<Props> {
-
+export default class App extends Component {
   componentDidMount () {
     SplashScreen.hide();
   }
+
   render() {
     return (
       <Fragment>
