@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HomeRender /> renders the HomeRender component correctly 1`] = `
+exports[`<Rates /> renders the Rates component correctly 1`] = `
 <View
   style={
     Object {

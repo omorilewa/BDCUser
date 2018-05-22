@@ -1,15 +1,15 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import HomeRender from '../HomeRender';
+import Rates from '../Rates';
 
-describe('<HomeRender />', () => {
+describe('<Rates />', () => {
   const testProps = {
     instructions: 'test that this renders correctly',
   };
 
-  it('renders the HomeRender component correctly', () => {
+  it('renders the Rates component correctly', () => {
     const tree = renderer.create(
-      <HomeRender {...testProps} />
+      <Rates {...testProps} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
