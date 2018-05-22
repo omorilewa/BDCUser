@@ -1,6 +1,6 @@
 import React from 'react';
-import { Easing, TouchableHighlight, View, ScrollView } from 'react-native';
-import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
+import { Easing, TouchableHighlight, View, Text } from 'react-native';
+import { StackNavigator, DrawerNavigator } from 'react-navigation';
 import { Icon } from 'native-base';
 import {
   RatesScreen,
@@ -32,25 +32,17 @@ const drawerButton = (navigation) =>
 export const DrawerStack = DrawerNavigator({
   Rates: { screen: RatesScreen },
   'About ABCON': { screen: AboutScreen },
-  'Historic Rates': { screen: HistoricRatesScreen },
+  'Historic rates': { screen: HistoricRatesScreen },
   Converter: { screen: ConverterScreen },
   'Other rates': { screen: OtherRatesScreen },
   'Market News': { screen: MarketNewsScreen },
-  'Contact Us': { screen: ContactUsScreen },
+  'Contact us': { screen: ContactUsScreen },
 },
 {
   gesturesEnabled: false,
   drawerWidth: 420,
-  /* eslint-disable */
-  contentComponent: (props) =>
-    <View style={styles.flex}>
-      <ScrollView>
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <DrawerItems {...props} />
-        </View>
-      </ScrollView>
-    </View>,
-  drawerBackgroundColor: '#0e160e',
+  drawerBackgroundColor: 'transparent',
+  drawerPosition: 'right',
   contentOptions: {
     labelStyle: styles.drawerText,
     itemStyle: styles.item
@@ -79,7 +71,6 @@ const DrawerNavigation = StackNavigator({
     headerTintColor: 'white',
     gesturesEnabled: false,
     headerRight: drawerButton(navigation),
-    drawerPosition: 'right',
     headerTitleStyle: {
       fontFamily: 'montserrat',
       fontWeight: 'normal',
