@@ -1,6 +1,6 @@
 import { AppRegistry } from 'react-native';
 import App from './App';
-import HomeRender from './common/components/HomeRender';
+
+console.disableYellowBox = true;
 
 AppRegistry.registerComponent('BDCUser', () => App);
-AppRegistry.registerComponent('BDCUser', () => HomeRender);
