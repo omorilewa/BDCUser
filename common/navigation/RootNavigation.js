@@ -1,5 +1,5 @@
 import React from 'react';
-import { Easing, TouchableHighlight, View, Text } from 'react-native';
+import { Easing, TouchableHighlight } from 'react-native';
 import { StackNavigator, DrawerNavigator } from 'react-navigation';
 import { Icon } from 'native-base';
 import {
@@ -60,13 +60,11 @@ const DrawerNavigation = StackNavigator({
       height: 80
     },
     headerTitle: (
-      <View>
-        <TouchableHighlight
-          underlayColor='#015b00'
-          onPress={() => navigation.navigate('DrawerClose')}>
-          <Icon name="arrow-back" type="MaterialIcons" style={styles.backIcon}></Icon>
-        </TouchableHighlight>
-      </View>
+      <TouchableHighlight
+        underlayColor='#015b00'
+        onPress={() => navigation.navigate('DrawerClose')}>
+        <Icon name="arrow-back" type="MaterialIcons" style={styles.backIcon}></Icon>
+      </TouchableHighlight>
     ),
     headerTintColor: 'white',
     gesturesEnabled: false,
