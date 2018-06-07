@@ -45,4 +45,3 @@ export const StubStyles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
