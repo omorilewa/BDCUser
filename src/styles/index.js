@@ -71,5 +71,75 @@ export const RateScreenStyles = StyleSheet.create({
   },
   cut: {
     width: '100%'
+  },
+  calcView: {
+    backgroundColor: 'white',
+    width: 50,
+    height: 50,
+    marginRight: 10,
+    marginTop: 10,
+    borderRadius:20,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent:'center'
+  },
+  outerView: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  outerPadding: {
+    paddingRight: 8,
+    paddingLeft: 8
+  },
+  img: {
+    width: 25,
+    height: 33
+  },
+  headerText: {
+    fontFamily: 'OpenSans-SemiBold',
+    fontSize: 18,
+    color: 'white',
+    marginTop: 8
+  },
+  subText: {
+    fontSize: 14,
+    marginTop: 3,
+    color: '#9fa99d',
+    fontFamily: 'OpenSans-Regular'
+  },
+  color: {
+    color: 'white',
+    marginTop: 13,
+    fontFamily: 'OpenSans-Regular'
+  },
+  row: {
+    flexDirection: 'row'
+  },
+  margin: {
+    marginTop: 6,
+    paddingLeft: 18,
+    paddingRight: 18,
+    justifyContent: 'space-between'
+  },
+  white: {
+    color: 'white',
+    marginLeft: 4,
+    fontSize: 14,
+    fontFamily: 'OpenSans-Italic',
+  },
+  morning: {
+    backgroundColor: '#006FFF',
+  },
+  afternoon: {
+    backgroundColor: '#FF9E3D',
+  },
+  evening: {
+    backgroundColor: '#FF0000',
+  },
+  indicator: {
+    width: 14,
+    height: 14,
+    marginTop: 2,
+    borderRadius: 4,
   }
 });
