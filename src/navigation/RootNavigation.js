@@ -1,6 +1,6 @@
 import React from 'react';
-import { Easing, TouchableHighlight } from 'react-native';
-import { StackNavigator, DrawerNavigator } from 'react-navigation';
+import { Easing, TouchableHighlight, ImageBackground, View, Dimensions } from 'react-native';
+import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
 import { Icon } from 'native-base';
 import {
   RatesScreen,
@@ -12,6 +12,8 @@ import {
   ContactUsScreen
 } from '../screens';
 import { NavStyles as styles } from '../styles';
+
+import Images from '@assets/images';
 
 
 const drawerButton = (navigation) =>
@@ -28,6 +30,13 @@ const drawerButton = (navigation) =>
     <Icon name="ios-menu" style={styles.icon} />
   </TouchableHighlight>;
 
+const CustomDrawerContentComponent = (props) =>
+  <ImageBackground source={Images.background} style={{ width : Dimensions.get('window').width}}>
+    <View style={{backgroundColor:'rgba(0,0,0,.7)'}}>
+      <DrawerItems {...props} />
+    </View>
+  </ImageBackground>
+;
 
 export const DrawerStack = DrawerNavigator({
   Rates: { screen: RatesScreen },
@@ -42,6 +51,7 @@ export const DrawerStack = DrawerNavigator({
   gesturesEnabled: false,
   drawerWidth: 420,
   drawerBackgroundColor: 'transparent',
+  contentComponent  : CustomDrawerContentComponent,
   drawerPosition: 'right',
   contentOptions: {
     labelStyle: styles.drawerText,
