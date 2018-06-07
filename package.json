@@ -11,6 +11,15 @@
       "./src/assets/fonts/"
     ]
   },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "!node_modules/react-runtime"
+    ]
+  },
   "dependencies": {
     "native-base": "^2.4.5",
     "react": "16.3.1",
@@ -30,8 +39,5 @@
     "eslint-plugin-react": "^7.8.2",
     "jest": "22.4.4",
     "react-test-renderer": "16.3.1"
-  },
-  "jest": {
-    "preset": "react-native"
   }
 }
