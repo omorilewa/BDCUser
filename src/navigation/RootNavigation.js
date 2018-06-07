@@ -56,7 +56,7 @@ export const DrawerStack = DrawerNavigator({
   'Market News': { screen: MarketNewsScreen },
   'Contact us': { screen: ContactUsScreen },
 },
-{
+  {
     gesturesEnabled: false,
     drawerWidth: 420,
     drawerBackgroundColor: 'transparent',
@@ -76,21 +76,15 @@ const DrawerNavigation = StackNavigator({
       headerStyle: {
         backgroundColor: '#015b00',
         paddingLeft: 10,
-        height: 80
+        height: 60
       },
-      headerTitle: (
-        <TouchableHighlight
-          underlayColor='#015b00'
-          onPress={() => navigation.navigate('DrawerClose')}>
-          <Icon name="arrow-back" type="MaterialIcons" style={styles.backIcon}></Icon>
-        </TouchableHighlight>
-      ),
       headerTintColor: 'white',
       gesturesEnabled: false,
       headerRight: drawerButton(navigation),
       headerTitleStyle: {
-        fontFamily: 'montserrat',
+        fontFamily: 'OpenSans-Regular',
         fontWeight: 'normal',
+        color: '#FFFC00'
       },
     })
   });
