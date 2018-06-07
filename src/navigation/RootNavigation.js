@@ -1,5 +1,11 @@
 import React from 'react';
-import { Easing, TouchableHighlight, ImageBackground, View, Dimensions } from 'react-native';
+import {
+  Easing,
+  TouchableHighlight,
+  ImageBackground,
+  View,
+  Dimensions
+} from 'react-native';
 import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
 import { Icon } from 'native-base';
 import {
@@ -31,12 +37,15 @@ const drawerButton = (navigation) =>
   </TouchableHighlight>;
 
 const CustomDrawerContentComponent = (props) =>
-  <ImageBackground source={Images.background} style={{ width : Dimensions.get('window').width}}>
-    <View style={{backgroundColor:'rgba(0,0,0,.7)'}}>
+  <ImageBackground
+    source={Images.background}
+    style={{ width: Dimensions.get('window').width }}
+  >
+    <View style={styles.drawerView}>
       <DrawerItems {...props} />
     </View>
   </ImageBackground>
-;
+  ;
 
 export const DrawerStack = DrawerNavigator({
   Rates: { screen: RatesScreen },
@@ -48,43 +57,43 @@ export const DrawerStack = DrawerNavigator({
   'Contact us': { screen: ContactUsScreen },
 },
 {
-  gesturesEnabled: false,
-  drawerWidth: 420,
-  drawerBackgroundColor: 'transparent',
-  contentComponent  : CustomDrawerContentComponent,
-  drawerPosition: 'right',
-  contentOptions: {
-    labelStyle: styles.drawerText,
-    itemStyle: styles.item
-  }
-});
+    gesturesEnabled: false,
+    drawerWidth: 420,
+    drawerBackgroundColor: 'transparent',
+    contentComponent: CustomDrawerContentComponent,
+    drawerPosition: 'right',
+    contentOptions: {
+      labelStyle: styles.drawerText,
+      itemStyle: styles.item
+    }
+  });
 
 const DrawerNavigation = StackNavigator({
   DrawerStack: { screen: DrawerStack },
 }, {
-  headerMode: 'none',
-  navigationOptions: ({ navigation }) => ({
-    headerStyle: {
-      backgroundColor: '#015b00',
-      paddingLeft: 10,
-      height: 80
-    },
-    headerTitle: (
-      <TouchableHighlight
-        underlayColor='#015b00'
-        onPress={() => navigation.navigate('DrawerClose')}>
-        <Icon name="arrow-back" type="MaterialIcons" style={styles.backIcon}></Icon>
-      </TouchableHighlight>
-    ),
-    headerTintColor: 'white',
-    gesturesEnabled: false,
-    headerRight: drawerButton(navigation),
-    headerTitleStyle: {
-      fontFamily: 'montserrat',
-      fontWeight: 'normal',
-    },
-  })
-});
+    headerMode: 'none',
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#015b00',
+        paddingLeft: 10,
+        height: 80
+      },
+      headerTitle: (
+        <TouchableHighlight
+          underlayColor='#015b00'
+          onPress={() => navigation.navigate('DrawerClose')}>
+          <Icon name="arrow-back" type="MaterialIcons" style={styles.backIcon}></Icon>
+        </TouchableHighlight>
+      ),
+      headerTintColor: 'white',
+      gesturesEnabled: false,
+      headerRight: drawerButton(navigation),
+      headerTitleStyle: {
+        fontFamily: 'montserrat',
+        fontWeight: 'normal',
+      },
+    })
+  });
 
 const noTransitionConfig = () => ({
   transitionSpec: {
@@ -96,9 +105,9 @@ const noTransitionConfig = () => ({
 export const PrimaryNavigator = StackNavigator({
   DrawerStack: { screen: DrawerNavigation },
 }, {
-  // Default config for all screens
-  headerMode: 'float',
-  title: 'DrawerStack',
-  initialRouteName: 'DrawerStack',
-  transitionConfig: noTransitionConfig
-});
+    // Default config for all screens
+    headerMode: 'float',
+    title: 'DrawerStack',
+    initialRouteName: 'DrawerStack',
+    transitionConfig: noTransitionConfig
+  });

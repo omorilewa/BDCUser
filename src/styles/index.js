@@ -31,6 +31,9 @@ export const NavStyles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  drawerView: {
+    backgroundColor:'rgba(0,0,0,.7)'
+  }
 });
 
 export const StubStyles = StyleSheet.create({
