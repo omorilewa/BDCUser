@@ -56,38 +56,38 @@ export const DrawerStack = DrawerNavigator({
   'Market News': { screen: MarketNewsScreen },
   'Contact us': { screen: ContactUsScreen },
 },
-  {
-    gesturesEnabled: false,
-    drawerWidth: 420,
-    drawerBackgroundColor: 'transparent',
-    contentComponent: CustomDrawerContentComponent,
-    drawerPosition: 'right',
-    contentOptions: {
-      labelStyle: styles.drawerText,
-      itemStyle: styles.item
-    }
-  });
+{
+  gesturesEnabled: false,
+  drawerWidth: 420,
+  drawerBackgroundColor: 'transparent',
+  contentComponent: CustomDrawerContentComponent,
+  drawerPosition: 'right',
+  contentOptions: {
+    labelStyle: styles.drawerText,
+    itemStyle: styles.item
+  }
+});
 
 const DrawerNavigation = StackNavigator({
   DrawerStack: { screen: DrawerStack },
 }, {
-    headerMode: 'none',
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#015b00',
-        paddingLeft: 10,
-        height: 60
-      },
-      headerTintColor: 'white',
-      gesturesEnabled: false,
-      headerRight: drawerButton(navigation),
-      headerTitleStyle: {
-        fontFamily: 'OpenSans-Regular',
-        fontWeight: 'normal',
-        color: '#FFFC00'
-      },
-    })
-  });
+  headerMode: 'none',
+  navigationOptions: ({ navigation }) => ({
+    headerStyle: {
+      backgroundColor: '#015b00',
+      paddingLeft: 10,
+      height: 60
+    },
+    headerTintColor: 'white',
+    gesturesEnabled: false,
+    headerRight: drawerButton(navigation),
+    headerTitleStyle: {
+      fontFamily: 'OpenSans-Regular',
+      fontWeight: 'normal',
+      color: '#FFFC00'
+    },
+  })
+});
 
 const noTransitionConfig = () => ({
   transitionSpec: {
@@ -99,9 +99,9 @@ const noTransitionConfig = () => ({
 export const PrimaryNavigator = StackNavigator({
   DrawerStack: { screen: DrawerNavigation },
 }, {
-    // Default config for all screens
-    headerMode: 'float',
-    title: 'DrawerStack',
-    initialRouteName: 'DrawerStack',
-    transitionConfig: noTransitionConfig
-  });
+  // Default config for all screens
+  headerMode: 'float',
+  title: 'DrawerStack',
+  initialRouteName: 'DrawerStack',
+  transitionConfig: noTransitionConfig
+});
