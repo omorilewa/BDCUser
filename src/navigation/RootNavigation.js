@@ -55,8 +55,7 @@ export const DrawerStack = DrawerNavigator({
   'Other rates': { screen: OtherRatesScreen },
   'Market News': { screen: MarketNewsScreen },
   'Contact us': { screen: ContactUsScreen },
-},
-{
+},{
   gesturesEnabled: false,
   drawerWidth: 420,
   drawerBackgroundColor: 'transparent',
