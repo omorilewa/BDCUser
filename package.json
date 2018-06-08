@@ -21,8 +21,16 @@
     ]
   },
   "dependencies": {
+    "apollo-cache-inmemory": "^1.2.2",
+    "apollo-client": "^2.3.2",
+    "apollo-link": "^1.2.2",
+    "apollo-link-error": "^1.1.0",
+    "apollo-link-http": "^1.5.4",
+    "graphql": "^14.0.0-rc.1",
+    "graphql-tag": "^2.9.2",
     "native-base": "^2.4.5",
     "react": "16.3.1",
+    "react-apollo": "^2.1.4",
     "react-native": "0.55.4",
     "react-native-modal-dropdown": "^0.6.2",
     "react-native-splash-screen": "3.0.6",
