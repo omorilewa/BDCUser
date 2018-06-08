@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import { HistoricRates } from '../components';
+import { ContentWrapper, HistoricRates } from '../components';
 
 class HistoricRatesScreen extends Component {
   static displayName = 'HistoricRatesScreen';
+  static navigationOptions = {
+    title: 'Historic Rates',
+    headerTitleStyle: {
+      fontFamily: 'OpenSans-Regular',
+      color: '#FFFC00'
+    },
+  };
 
   render() {
     return (
-      <HistoricRates />
+      <ContentWrapper>
+        <HistoricRates />
+      </ContentWrapper>
     );
   }
 }
