@@ -143,3 +143,72 @@ export const RateScreenStyles = StyleSheet.create({
     borderRadius: 4,
   }
 });
+
+export const GeneralStyles = StyleSheet.create({
+  calcView: {
+    backgroundColor: 'white',
+    width: 50,
+    height: 50,
+    marginRight: 10,
+    marginTop: 10,
+    borderRadius:20,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent:'center'
+  },
+  outerView: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  outerPadding: {
+    paddingRight: 8,
+    paddingLeft: 8,
+    height: '100%',
+    backgroundColor:'rgba(0,0,0,.7)'
+  },
+  calcImg: {
+    width: 25,
+    height: 33
+  },
+  wrapperImage: {
+    width: '100%',
+    height: '100%',
+  },
+});
+
+export const AboutStyles = StyleSheet.create({
+  container: {
+    height: '100%',
+    flex: 1,
+    alignItems: 'center'
+  },
+  cta: {
+    color: 'white',
+    fontSize: 15,
+    fontFamily: 'OpenSans-SemiBold'
+  },
+  readMoreButton: {
+    marginTop: 15,
+    backgroundColor: '#02a901',
+    borderRadius: 5,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '70%'
+  },
+  aboutContent: {
+    justifyContent: 'center',
+    height: 450,
+    marginTop: 10,
+    backgroundColor: '#105410',
+    borderRadius: 30,
+    width: '98%',
+    opacity: 0.8,
+  },
+  aboutText: {
+    color: 'white',
+    fontSize: 15,
+    padding: 10,
+    fontFamily: 'OpenSans-Regular'
+  }
+});
