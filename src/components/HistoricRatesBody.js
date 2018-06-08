@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
-import { View, FlatList, Text } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { HistoricRatesStyles as styles } from '../styles';
 import { HistoricRatesItem } from '.';
-import MockData from '../dataApi/index.json';
+import MockData from '../dataApi/mockData.json';
 import Images from '@assets/images';
 
 export default class HistoricRatesBody extends PureComponent {
