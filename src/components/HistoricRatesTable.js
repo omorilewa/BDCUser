@@ -13,7 +13,6 @@ export default class HistoricRatesTable extends Component {
   }
 
   onClickDropDown = () => {
-    console.log('clicked');
     this.setState(() => ({
       ratesData: []
     }));
