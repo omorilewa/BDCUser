@@ -271,9 +271,29 @@ export const HistoricRatesStyles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'OpenSans-SemiBold',
   },
+  tableHeading: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 15,
+  },
+  headerTextRow: {
+    color: 'white',
+    fontFamily: 'OpenSans-Italic',
+    fontSize: 13,
+  },
   textView: {
     height: '100%',
     paddingLeft: 13,
     paddingRight: 18,
   },
+  headerImage: {
+    width: 20,
+    height: 10,
+    marginRight: 5,
+  },
+  headerRangeView: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 });

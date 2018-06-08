@@ -1,4 +1,5 @@
 export { default as ContentWrapper } from './ContentWrapper';
+export { default as HistoricRatesHeader } from './HistoricRatesHeader';
 export { default as HistoricRatesTable } from './HistoricRatesTable';
 export { default as Rates } from './Rates';
 export { default as About } from './About';
