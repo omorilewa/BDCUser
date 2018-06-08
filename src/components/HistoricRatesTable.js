@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import ModalDropdown from 'react-native-modal-dropdown';
 import { HistoricRatesStyles as styles } from '../styles';
-import { HistoricRatesHeader } from '.';
+import { HistoricRatesHeader, HistoricRatesBody } from '.';
 
 export default class HistoricRatesTable extends Component {
   static propTypes = {
@@ -45,6 +45,7 @@ export default class HistoricRatesTable extends Component {
           </TouchableOpacity>
         </View>
         <HistoricRatesHeader />
+        <HistoricRatesBody />
       </Fragment>
     );
   }

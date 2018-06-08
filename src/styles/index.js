@@ -273,7 +273,6 @@ export const HistoricRatesStyles = StyleSheet.create({
   },
   tableHeading: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     marginTop: 15,
   },
   headerTextRow: {
@@ -291,7 +290,51 @@ export const HistoricRatesStyles = StyleSheet.create({
     height: 10,
     marginRight: 5,
   },
-  headerRangeView: {
+  bodyRowView: {
+    flexDirection: 'row',
+  },
+  bodyDataItem: {
+    marginTop: 10
+  },
+  currDataView: {
+    width: '20%',
+  },
+  ratesItemView: {
+    width: '25%'
+  },
+  currItemView: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  ratesText: {
+    color: 'white',
+    fontFamily: 'OpenSans-Regular'
+  },
+  dateText: {
+    fontFamily: 'OpenSans-Italic',
+    color: 'yellow'
+  },
+  currImage: {
+    width: 20,
+    height: 10,
+    marginRight: 5,
+  },
+  dateColumn: {
+    width: '30%'
+  },
+  currencyColumn: {
+    width: '20%'
+  },
+  buyRangeColumn: {
+    width: '25%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: 0,
+    marginLeft: 0
+  },
+  sellRangeColumn: {
+    width: '25%',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
