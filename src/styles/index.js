@@ -161,8 +161,6 @@ export const GeneralStyles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   outerPadding: {
-    paddingRight: 8,
-    paddingLeft: 8,
     height: '100%',
     backgroundColor:'rgba(0,0,0,.7)'
   },
@@ -210,5 +208,92 @@ export const AboutStyles = StyleSheet.create({
     fontSize: 15,
     padding: 10,
     fontFamily: 'OpenSans-Regular'
+  }
+});
+
+export const HistoricRatesStyles = StyleSheet.create({
+  arrow: {
+    fontSize: 8,
+    marginBottom: 1,
+    color: 'white',
+  },
+  buttonText: {
+    width: 70,
+    fontFamily: 'OpenSans-Regular',
+    fontSize: 12,
+    marginBottom: 3,
+    color: 'white',
+  },
+  dropdown: {
+    width: 100,
+    margin: 0,
+    flexDirection:'row'
+  },
+  dropdowntext: {
+    fontFamily: 'OpenSans-Regular',
+    fontSize: 12,
+  },
+  filterText: {
+    fontSize: 12,
+    color: 'white',
+    marginRight: 8,
+    fontFamily: 'OpenSans-Italic'
+  },
+  filterView: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    paddingTop: 12,
+    paddingRight: 8
+  },
+  hr: {
+    flex: 1,
+    borderBottomColor: '#9c9e9f',
+    borderBottomWidth: 0.8,
+    width: 100,
+  },
+  modal: {
+    flex: 1,
+    width: 100,
+    marginBottom: 0
+  },
+  modalView: {
+    width: 100,
+    alignItems:'center',
+    flexDirection:'row',
+  },
+  subText: {
+    color: 'white',
+    fontSize: 13,
+    fontFamily: 'OpenSans-Regular'
+  },
+  superText: {
+    color: 'white',
+    fontSize: 20,
+    fontFamily: 'OpenSans-SemiBold',
+  },
+  tableHeading: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 15,
+  },
+  headerTextRow: {
+    color: 'white',
+    fontFamily: 'OpenSans-Italic',
+    fontSize: 13,
+  },
+  textView: {
+    height: '100%',
+    paddingLeft: 13,
+    paddingRight: 18,
+  },
+  headerImage: {
+    width: 20,
+    height: 10,
+    marginRight: 5,
+  },
+  headerRangeView: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 });
