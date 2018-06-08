@@ -143,3 +143,34 @@ export const RateScreenStyles = StyleSheet.create({
     borderRadius: 4,
   }
 });
+
+export const GeneralStyles = StyleSheet.create({
+  calcView: {
+    backgroundColor: 'white',
+    width: 50,
+    height: 50,
+    marginRight: 10,
+    marginTop: 10,
+    borderRadius:20,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent:'center'
+  },
+  outerView: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  outerPadding: {
+    paddingRight: 8,
+    paddingLeft: 8
+  },
+  calcImg: {
+    width: 25,
+    height: 33
+  },
+  wrapperImage: {
+    width: '100%',
+    height: '100%',
+  },
+});
+
