@@ -162,7 +162,9 @@ export const GeneralStyles = StyleSheet.create({
   },
   outerPadding: {
     paddingRight: 8,
-    paddingLeft: 8
+    paddingLeft: 8,
+    height: '100%',
+    backgroundColor:'rgba(0,0,0,.7)'
   },
   calcImg: {
     width: 25,
@@ -200,7 +202,8 @@ export const AboutStyles = StyleSheet.create({
     marginTop: 10,
     backgroundColor: '#105410',
     borderRadius: 30,
-    width: '98%'
+    width: '98%',
+    opacity: 0.8,
   },
   aboutText: {
     color: 'white',
