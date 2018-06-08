@@ -1,0 +1,38 @@
+  [
+    {
+      "date": "Mon, May 7",
+      "currency": "USD",
+      "buyRate": "360",
+      "sellRate": "363",
+      "location": {
+        "name": "Lagos"
+      }
+    },
+    {
+      "date": "Tue, May 8",
+      "currency": "USD",
+      "buyRate": "360",
+      "sellRate": "363",
+      "location": {
+        "name": "Abuja"
+      }
+    },
+    {
+      "date": "Wed, May 9",
+      "currency": "USD",
+      "buyRate": "360",
+      "sellRate": "363",
+      "location": {
+        "name": "Portharcourt"
+      }
+    },
+    {
+      "date": "Thu, May 10",
+      "currency": "USD",
+      "buyRate": "360",
+      "sellRate": "363",
+      "location": {
+        "name": "Onitsha"
+      }
+    }
+  ]
