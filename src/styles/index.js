@@ -174,3 +174,38 @@ export const GeneralStyles = StyleSheet.create({
   },
 });
 
+export const AboutStyles = StyleSheet.create({
+  container: {
+    height: '100%',
+    flex: 1,
+    alignItems: 'center'
+  },
+  cta: {
+    color: 'white',
+    fontSize: 15,
+    fontFamily: 'OpenSans-SemiBold'
+  },
+  readMoreButton: {
+    marginTop: 15,
+    backgroundColor: '#02a901',
+    borderRadius: 5,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '70%'
+  },
+  aboutContent: {
+    justifyContent: 'center',
+    height: 450,
+    marginTop: 10,
+    backgroundColor: '#105410',
+    borderRadius: 30,
+    width: '98%'
+  },
+  aboutText: {
+    color: 'white',
+    fontSize: 15,
+    padding: 10,
+    fontFamily: 'OpenSans-Regular'
+  }
+});
