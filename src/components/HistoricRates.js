@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { Text, View } from 'react-native';
-import { StubStyles as styles } from '../styles';
+import { HistoricRatesStyles as styles } from '../styles';
+import { TabNav, HistoricRatesTable } from '.';
 
-const HistoricRates = () => (
-  <View style={styles.container}>
-    <Text style={styles.welcome}>
-    Check our historic rates
-    </Text>
-    <Text style={styles.instructions}>
-    HISTORIC RATES
-    </Text>
-  </View>
-);
+class HistoricRates extends PureComponent {
+  render() {
+    return (
+      <View style={styles.textView}>
+        <Text style={styles.superText}>Parallel Market Historic Rates Table</Text>
+        <Text style={styles.subText}>Rates are updated 3 times daily by BDCs in these locations.</Text>
+        <TabNav
+          screenOne={HistoricRatesTable}
+          screenTwo={HistoricRatesTable}
+        />
+      </View>
+    );
+  }
+}
 
 export default HistoricRates;
