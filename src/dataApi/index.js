@@ -79,13 +79,18 @@ export const restructureRates = (dateRates) => {
   return restructuredRates;
 };
 
+export const stripCurrencyToOneInstance = (structuredRates) => {
+  const USDItem = structuredRates.find((rate) => rate.currency === 'USD');
+  const GBPItem = structuredRates.find((rate) => rate.currency === 'GBP');
+  const EURItem = structuredRates.find((rate) => rate.currency === 'EUR');
+  const YENItem = structuredRates.find((rate) => rate.currency === 'YEN');
+  const allCurrencyRates = [USDItem, GBPItem, EURItem, YENItem];
+  return allCurrencyRates;
+};
+
 export const trimRates = (ratesArray) => {
   const ratesArrayCopy = ratesArray.slice();
   const reorderedRates = restructureRates(ratesArrayCopy);
-  const maxAllowedValues = 4;
-  let ratesForRender;
-  ratesArrayCopy.length > maxAllowedValues ?
-    ratesForRender = reorderedRates.slice(0, 4) :
-    ratesForRender = reorderedRates;
-  return ratesForRender;
+  const strippedRatesArray = stripCurrencyToOneInstance(reorderedRates);
+  return strippedRatesArray;
 };
