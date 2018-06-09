@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { View, Text, Image } from 'react-native';
 import moment from 'moment';
 import { HistoricRatesStyles as styles } from '../styles';
-import { getImageFromCurrency } from '../dataApi';
+import { getImageFromCurrency, trimRates } from '../dataApi';
 
 export default class HistoricRatesItem extends Component {
   state = {
@@ -21,6 +21,7 @@ export default class HistoricRatesItem extends Component {
 
   render() {
     const { ratesPerDate, date } = this.state;
+    const sizedRates = trimRates(ratesPerDate);
     const formattedDate = moment(date).format('ddd, MMM D');
 
     return (
@@ -31,7 +32,7 @@ export default class HistoricRatesItem extends Component {
           </View>
           <Fragment>
             <View style={styles.currDataView}>
-              {ratesPerDate.map((rate, index) => (
+              {sizedRates.map((rate, index) => (
                 <View style={styles.currItemView} key={index}>
                   <Image source={getImageFromCurrency(rate.currency)} style={styles.currImage}/>
                   <Text style={styles.ratesText}>{rate.currency}</Text>
@@ -39,14 +40,14 @@ export default class HistoricRatesItem extends Component {
               ))}
             </View>
             <View style={styles.ratesItemView}>
-              {ratesPerDate.map((rate, index) => (
+              {sizedRates.map((rate, index) => (
                 <Fragment key={index}>
                   <Text style={styles.ratesText}>{rate.buyRate}</Text>
                 </Fragment>
               ))}
             </View>
             <View style={styles.ratesItemView}>
-              {ratesPerDate.map((rate, index) => (
+              {sizedRates.map((rate, index) => (
                 <Text key={index} style={styles.ratesText}>{rate.sellRate}</Text>
               ))}
             </View>
