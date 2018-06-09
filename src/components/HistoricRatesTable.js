@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import ModalDropdown from 'react-native-modal-dropdown';
+import { Query } from 'react-apollo';
 import { HistoricRatesStyles as styles } from '../styles';
 import { HistoricRatesHeader, HistoricRatesBody } from '.';
+import { GET_LOCATION } from '../operations';
 
 export default class HistoricRatesTable extends Component {
   static propTypes = {
@@ -45,7 +47,14 @@ export default class HistoricRatesTable extends Component {
           </TouchableOpacity>
         </View>
         <HistoricRatesHeader />
-        <HistoricRatesBody />
+        <Query query={GET_LOCATION}>
+          {({ data, error, loading }) => {
+            if (data) {
+              const { locations } = data;
+              return <HistoricRatesBody locations={locations} />;
+            }
+          }}
+        </Query>
       </Fragment>
     );
   }
