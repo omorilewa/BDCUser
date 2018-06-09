@@ -9,10 +9,9 @@ export const GET_LOCATION = gql`
   }
 `;
 
-// Computed rates for Lagos alone
 export const GET_COMPUTED_RATES = gql`
-  query computedRates {
-    computedRates(first: 100, locationId: "cjhgeu3rh0004f2qu4cfk2my8") {
+  query computedRates($locationId: ID!) {
+    computedRates(first: 100, locationId: $locationId) {
       date
       currency
       buyRate
