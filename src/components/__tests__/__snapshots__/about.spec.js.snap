@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<About /> renders the About component correctly 1`] = `
+<View
+  style={
+    Object {
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../src/assets/img/backgd.png",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "height": "100%",
+          "width": "100%",
+        },
+        undefined,
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(0,0,0,.7)",
+        "height": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "white",
+            "borderRadius": 20,
+            "borderWidth": 1,
+            "height": 50,
+            "justifyContent": "center",
+            "marginRight": 10,
+            "marginTop": 10,
+            "width": 50,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/assets/img/converter.png",
+            }
+          }
+          style={
+            Object {
+              "height": 33,
+              "width": 25,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "height": "100%",
+        }
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#105410",
+            "borderRadius": 30,
+            "height": 450,
+            "justifyContent": "center",
+            "marginTop": 10,
+            "opacity": 0.8,
+            "width": "98%",
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "white",
+              "fontFamily": "OpenSans-Regular",
+              "fontSize": 15,
+              "padding": 10,
+            }
+          }
+        >
+          
+The acronym ABCON depicts Association of
+ Bureaux De Change Operators of Nigeria.
+ The historical background of ABCON dates back
+ to 4th of February, 1997 when its registration
+ was approved by the Corporate Affairs
+ Commission (C.A.C).
+
+ It came into being from a vision of some
+ bureaux de change operators numbering more
+ than 50(fifty) in an attempt to create an
+ environment of sanctity in the business of
+ foreign exchange.
+
+ Hither-to, the country-Nigeria was experiencing
+ an economic recession which emanated from
+ the restrictions placed on foreign exchange by a
+ government policy named "Structural
+ Adjustment Program" (SAP) prevalent in the '80s.
+
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#02a901",
+            "borderRadius": 5,
+            "height": 50,
+            "justifyContent": "center",
+            "marginTop": 15,
+            "width": "70%",
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "white",
+              "fontFamily": "OpenSans-SemiBold",
+              "fontSize": 15,
+            }
+          }
+        >
+          Read more
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
