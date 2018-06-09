@@ -70,3 +70,21 @@ export const sortTodayRates = (data) => {
     return acc;
   }, {});
 };
+
+export const restructureRates = (dateRates) => {
+  const morningRates = dateRates.filter((rates) => rates.periodOfTheDay === 'MORNING');
+  const afternoonRates = dateRates.filter((rates) => rates.periodOfTheDay === 'AFTERNOON');
+  const eveningRates = dateRates.filter((rates) => rates.periodOfTheDay === 'EVENING');
+  const restructuredRates = [...eveningRates, ...afternoonRates, ...morningRates];
+  return restructuredRates;
+};
+
+export const trimRates = (ratesArray) => {
+  const reorderedRates = restructureRates(ratesArray);
+  const maxAllowedValues = 4;
+  let ratesForRender;
+  ratesArray.length > maxAllowedValues ?
+    ratesForRender = reorderedRates.slice(0, 4) :
+    ratesForRender = reorderedRates;
+  return ratesForRender;
+};
