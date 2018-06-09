@@ -9,7 +9,8 @@ import { RatesDisplayItem } from '.';
 import Images from '@assets/images';
 import Whoops from './Whoops';
 import moment from 'moment';
-export default class Home extends Component {
+
+export default class RatesDisplay extends Component {
   render() {
     const formattedDate = moment().format('ddd. MMM D');
     return (
