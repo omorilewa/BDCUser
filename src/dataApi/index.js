@@ -3,7 +3,11 @@ import Images from '@assets/images';
 const { usd, gbp, eur, yen } = Images;
 
 export const findLocationById = (locationsArray, locationId) => {
-  return locationsArray.find((location) => locationId === location.Id);
+  const availableIds = locationsArray.map((location) => location.id);
+  const idIsValid = availableIds.includes(locationId);
+  return idIsValid ?
+    locationsArray.find((location) => locationId === location.id).name :
+    'Location not available';
 };
 
 export const sortRatesByDate = (rawData) => {
