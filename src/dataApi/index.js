@@ -80,10 +80,11 @@ export const restructureRates = (dateRates) => {
 };
 
 export const trimRates = (ratesArray) => {
-  const reorderedRates = restructureRates(ratesArray);
+  const ratesArrayCopy = ratesArray.slice();
+  const reorderedRates = restructureRates(ratesArrayCopy);
   const maxAllowedValues = 4;
   let ratesForRender;
-  ratesArray.length > maxAllowedValues ?
+  ratesArrayCopy.length > maxAllowedValues ?
     ratesForRender = reorderedRates.slice(0, 4) :
     ratesForRender = reorderedRates;
   return ratesForRender;
