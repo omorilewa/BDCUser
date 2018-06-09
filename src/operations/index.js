@@ -20,3 +20,17 @@ export const GET_COMPUTED_RATES = gql`
     }
   }
 `;
+
+export const GET_TODAY_RATES = gql`
+  query todaysrates {
+    todaysRates {
+      buyRate
+      sellRate
+      currency
+      periodOfTheDay
+      location{
+        name
+      }
+    }
+  }
+`;

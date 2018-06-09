@@ -13,3 +13,4 @@ export { default as Converter } from './Converter';
 export { default as ContactUs } from './ContactUs';
 export { default as TabNav } from './TabNavigator';
 export { default as RatesDisplay } from './RatesDisplay';
+export { default as RatesDisplayItem} from './RatesDisplayItem';
