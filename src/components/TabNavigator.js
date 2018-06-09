@@ -17,7 +17,7 @@ const Tabnavigator = ({ screenOne, screenTwo, screenThree, screenFour, screenFiv
       },
       labelStyle: {
         fontSize: 13,
-        fontFamily: 'montserrat',
+        fontFamily: 'OpenSans-Regular',
       },
       tabStyle: {
         justifyContent: 'center',

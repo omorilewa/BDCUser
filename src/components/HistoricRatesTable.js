@@ -11,6 +11,7 @@ import { Query } from 'react-apollo';
 import { HistoricRatesStyles as styles } from '../styles';
 import { HistoricRatesHeader, HistoricRatesBody, Whoops } from '.';
 import { GET_LOCATION } from '../operations';
+import { getLocationId } from '../dataApi';
 
 export default class HistoricRatesTable extends Component {
   static propTypes = {
@@ -66,8 +67,10 @@ export default class HistoricRatesTable extends Component {
                 return <Whoops message="Error while fetching locations" />;
               }
               if (data) {
+                const locationName = this.props.navigation.state.routeName;
                 const { locations } = data;
-                return <HistoricRatesBody locations={locations} />;
+                const locationId = getLocationId(locations, locationName);
+                return <HistoricRatesBody locationId={locationId} />;
               }
             }}
           </Query>

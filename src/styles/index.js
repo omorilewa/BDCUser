@@ -393,4 +393,12 @@ export const HistoricRatesStyles = StyleSheet.create({
   loaderView: {
     marginTop: '50%',
   },
+  errorView: {
+    marginTop: '50%',
+    alignItems: 'center',
+  },
+  errorText: {
+    color: 'red',
+    fontFamily: 'OpenSans-SemiBold',
+  },
 });

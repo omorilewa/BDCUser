@@ -2,11 +2,11 @@ import Images from '@assets/images';
 
 const { usd, gbp, eur, yen } = Images;
 
-export const findLocationById = (locationsArray, locationId) => {
-  const availableIds = locationsArray.map((location) => location.id);
-  const idIsValid = availableIds.includes(locationId);
-  return idIsValid ?
-    locationsArray.find((location) => locationId === location.id).name :
+export const getLocationId = (locationsArray, locationName) => {
+  const availableNames = locationsArray.map((location) => location.name);
+  const nameIsValid = availableNames.includes(locationName);
+  return nameIsValid ?
+    locationsArray.find((location) => locationName === location.name).id :
     'Location not available';
 };
 

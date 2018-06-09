@@ -1,4 +1,4 @@
-import { findLocationById } from '../../dataApi';
+import { getLocationId } from '../../dataApi';
 
 const locations = [
   {
@@ -25,12 +25,12 @@ const locations = [
 
 describe('Finding Locations by their IDs', () => {
   it('returns the name of the Location, given the ID', () => {
-    const result = findLocationById(locations, 'cjhgeu3rh0008f2quhkuh7vpv');
-    expect(result).toEqual('Kano');
+    const result = getLocationId(locations, 'Kano');
+    expect(result).toEqual('cjhgeu3rh0008f2quhkuh7vpv');
   });
 
   it('returns a descriptive message when ID is not valid', () => {
-    const result = findLocationById(locations, 'haijiqwidjojdlkklsdf');
+    const result = getLocationId(locations, 'Portugal');
     expect(result).toEqual('Location not available');
   });
 });

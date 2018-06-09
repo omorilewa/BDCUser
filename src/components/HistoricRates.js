@@ -12,6 +12,9 @@ class HistoricRates extends PureComponent {
         <TabNav
           screenOne={HistoricRatesTable}
           screenTwo={HistoricRatesTable}
+          screenThree={HistoricRatesTable}
+          screenFour={HistoricRatesTable}
+          screenFive={HistoricRatesTable}
         />
       </View>
     );

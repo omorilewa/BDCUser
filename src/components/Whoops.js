@@ -1,12 +1,13 @@
-import React, { PureComponent } from 'react';
-import { View, Text } from 'react-native';
+import React, { PureComponent, Fragment } from 'react';
+import { Text } from 'react-native';
+import { HistoricRatesStyles as styles } from '../styles';
 
 export default class Whoops extends PureComponent {
   render() {
     return (
-      <View>
-        <Text>{this.props.message}</Text>
-      </View>
+      <Fragment>
+        <Text style={styles.errorText}>{this.props.message}</Text>
+      </Fragment>
     );
   }
 }
