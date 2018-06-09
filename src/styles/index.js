@@ -61,6 +61,12 @@ export const RateScreenStyles = StyleSheet.create({
     paddingTop: 15,
     backgroundColor: '#fff',
   },
+  headerImage: {
+    width: 20,
+    height: 10,
+    marginRight: 5,
+    marginTop: 5
+  },
   imagebg: {
     width: '100%',
     height: '100%',
@@ -112,8 +118,38 @@ export const RateScreenStyles = StyleSheet.create({
     marginTop: 13,
     fontFamily: 'OpenSans-Regular'
   },
+  header: {
+    paddingRight: 9,
+    paddingLeft: 9,
+    marginTop: 10
+  },
   row: {
     flexDirection: 'row'
+  },
+  date: {
+    width: '25%',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  currency: {
+    width: '25%',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  buyRate: {
+    width: '25%',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  sellRate:{
+    width: '25%',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  currImage: {
+    width: 25,
+    height: 15,
+    marginRight: 5,
   },
   margin: {
     marginTop: 6,
@@ -121,9 +157,23 @@ export const RateScreenStyles = StyleSheet.create({
     paddingRight: 18,
     justifyContent: 'space-between'
   },
+  rateText: {
+    color: 'white',
+    fontSize: 14,
+    fontFamily: 'OpenSans-Regular',
+  },
+  noRatesText: {
+    fontSize: 18,
+    color: 'white'
+  },
+  noRatesWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 150
+  },
   white: {
     color: 'white',
-    marginLeft: 4,
     fontSize: 14,
     fontFamily: 'OpenSans-Italic',
   },

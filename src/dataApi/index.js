@@ -47,3 +47,26 @@ export const getImageFromCurrency = (currency) => {
   }
   return returnedImage;
 };
+
+export const sortTodayRates = (data) => {
+  const ratesArr = data.todaysRates;
+  return ratesArr.reduce((acc, curr) => {
+    const accItem = {};
+    const timeofDay = curr.periodOfTheDay;
+    const currLocation = curr.location.name;
+    if (currLocation in acc) {
+      if (timeofDay in acc[currLocation]) {
+        acc[currLocation][timeofDay].push(curr);
+      }
+      else {
+        accItem[timeofDay] = [curr];
+        acc[currLocation][timeofDay] = accItem;
+      }
+    }
+    else {
+      accItem[timeofDay] = [curr];
+      acc[currLocation] = accItem;
+    }
+    return acc;
+  }, {});
+};
