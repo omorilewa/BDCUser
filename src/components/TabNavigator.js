@@ -1,11 +1,13 @@
 import React from 'react';
 import { TabNavigator } from 'react-navigation';
 
-const Tabnavigator = ({ screenOne, screenTwo }) => {
+const Tabnavigator = ({ screenOne, screenTwo, screenThree, screenFour, screenFive }) => {
   const CustomTabNavigator = TabNavigator({
     Lagos: { screen: screenOne },
     Abuja: { screen: screenTwo },
-    Portharcourt: { screen: screenTwo },
+    Portharcourt: { screen: screenThree },
+    Kano: { screen: screenFour },
+    Onitsha: { screen: screenFive },
   }, {
     tabBarOptions: {
       upperCaseLabel: false,
