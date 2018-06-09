@@ -85,7 +85,7 @@ export const stripCurrencyToOneInstance = (structuredRates) => {
   const EURItem = structuredRates.find((rate) => rate.currency === 'EUR');
   const YENItem = structuredRates.find((rate) => rate.currency === 'YEN');
   const allCurrencyRates = [USDItem, GBPItem, EURItem, YENItem];
-  return allCurrencyRates;
+  return allCurrencyRates.filter(Boolean);
 };
 
 export const trimRates = (ratesArray) => {

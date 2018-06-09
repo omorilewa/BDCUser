@@ -33,7 +33,6 @@ export default class HistoricRatesItem extends Component {
           <Fragment>
             <View style={styles.currDataView}>
               {sizedRates.map((rate, index) => (
-                !!rate &&
                 <View style={styles.currItemView} key={index}>
                   <Image source={getImageFromCurrency(rate.currency)} style={styles.currImage}/>
                   <Text style={styles.ratesText}>{rate.currency}</Text>
@@ -42,12 +41,12 @@ export default class HistoricRatesItem extends Component {
             </View>
             <View style={styles.ratesItemView}>
               {sizedRates.map((rate, index) => (
-                !!rate && <Text key={index} style={styles.ratesText}>{rate.buyRate}</Text>
+                <Text key={index} style={styles.ratesText}>{rate.buyRate}</Text>
               ))}
             </View>
             <View style={styles.ratesItemView}>
               {sizedRates.map((rate, index) => (
-                !!rate && <Text key={index} style={styles.ratesText}>{rate.sellRate}</Text>
+                <Text key={index} style={styles.ratesText}>{rate.sellRate}</Text>
               ))}
             </View>
           </Fragment>
