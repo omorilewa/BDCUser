@@ -1,17 +1,22 @@
 import React, { PureComponent } from 'react';
 import { View, FlatList, ActivityIndicator } from 'react-native';
+import { Query } from 'react-apollo';
 import { HistoricRatesStyles as styles } from '../styles';
 import { HistoricRatesItem } from '.';
-import { Query } from 'react-apollo';
 import { GET_COMPUTED_RATES } from '../operations';
 import { sortRatesByDate } from '../dataApi';
 import Whoops from './Whoops';
 
 export default class HistoricRatesBody extends PureComponent {
+  state = {
+    locationId: this.props.locationId,
+  }
 
   render() {
+    const { locationId } = this.state;
+
     return (
-      <Query query={GET_COMPUTED_RATES}>
+      <Query query={GET_COMPUTED_RATES} variables={{ locationId }}>
         {({ data, loading, error }) => {
           if (error) {
             return <Whoops message="Error while fetching rates" />;
