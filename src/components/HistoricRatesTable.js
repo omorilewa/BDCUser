@@ -1,9 +1,15 @@
 import React, { Component, Fragment } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import {
+  ActivityIndicator,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import ModalDropdown from 'react-native-modal-dropdown';
 import { Query } from 'react-apollo';
 import { HistoricRatesStyles as styles } from '../styles';
-import { HistoricRatesHeader, HistoricRatesBody } from '.';
+import { HistoricRatesHeader, HistoricRatesBody, Whoops } from '.';
 import { GET_LOCATION } from '../operations';
 
 export default class HistoricRatesTable extends Component {
@@ -47,14 +53,25 @@ export default class HistoricRatesTable extends Component {
           </TouchableOpacity>
         </View>
         <HistoricRatesHeader />
-        <Query query={GET_LOCATION}>
-          {({ data, error, loading }) => {
-            if (data) {
-              const { locations } = data;
-              return <HistoricRatesBody locations={locations} />;
-            }
-          }}
-        </Query>
+        <ScrollView>
+          <Query query={GET_LOCATION}>
+            {({ data, error, loading }) => {
+              if (loading) {
+                return (
+                  <View style={styles.loaderView}>
+                    <ActivityIndicator size="large" />
+                  </View>
+                );
+              } else if (error) {
+                return <Whoops message="Error while fetching locations" />;
+              }
+              if (data) {
+                const { locations } = data;
+                return <HistoricRatesBody locations={locations} />;
+              }
+            }}
+          </Query>
+        </ScrollView>
       </Fragment>
     );
   }

@@ -338,5 +338,8 @@ export const HistoricRatesStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
+  loaderView: {
+    marginTop: '50%',
+  },
 });
