@@ -15,11 +15,11 @@ export default class HistoricRatesHeader extends PureComponent {
         </View>
         <View style={styles.buyRangeColumn}>
           <Image source={Images.ngr} style={styles.headerImage} />
-          <Text style={styles.headerTextRow}>Buy Range</Text>
+          <Text style={styles.headerTextRow}>Buy Rate</Text>
         </View>
         <View style={styles.sellRangeColumn}>
           <Image source={Images.ngr} style={styles.headerImage} />
-          <Text style={styles.headerTextRow}>Sell Range</Text>
+          <Text style={styles.headerTextRow}>Sell Rate</Text>
         </View>
       </View>
     );

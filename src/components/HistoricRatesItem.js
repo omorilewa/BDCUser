@@ -41,13 +41,13 @@ export default class HistoricRatesItem extends Component {
             <View style={styles.ratesItemView}>
               {ratesPerDate.map((rate, index) => (
                 <Fragment key={index}>
-                  <Text style={styles.ratesText}>{rate.buyRate} - {Number(rate.buyRate) + 1}</Text>
+                  <Text style={styles.ratesText}>{rate.buyRate}</Text>
                 </Fragment>
               ))}
             </View>
             <View style={styles.ratesItemView}>
               {ratesPerDate.map((rate, index) => (
-                <Text key={index} style={styles.ratesText}>{rate.sellRate} - {Number(rate.sellRate) + 1}</Text>
+                <Text key={index} style={styles.ratesText}>{rate.sellRate}</Text>
               ))}
             </View>
           </Fragment>

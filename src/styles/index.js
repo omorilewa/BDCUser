@@ -300,7 +300,8 @@ export const HistoricRatesStyles = StyleSheet.create({
     width: '20%',
   },
   ratesItemView: {
-    width: '25%'
+    width: '25%',
+    alignItems: 'center',
   },
   currItemView: {
     flexDirection: 'row',
