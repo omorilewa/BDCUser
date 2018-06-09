@@ -19,7 +19,11 @@ export default class HistoricRatesBody extends PureComponent {
       <Query query={GET_COMPUTED_RATES} variables={{ locationId }}>
         {({ data, loading, error }) => {
           if (error) {
-            return <Whoops message="Error while fetching rates" />;
+            return (
+              <View style={styles.errorView}>
+                <Whoops message="Error while fetching rates" />
+              </View>
+            );
           } else if (loading) {
             return (
               <View style={styles.loaderView}>
