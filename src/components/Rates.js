@@ -44,7 +44,10 @@ const Rates = () => (
     >
       <TabNav
         screenOne={RatesDisplay}
-        screenTwo={RatesDisplay}/>
+        screenTwo={RatesDisplay}
+        screenThree={RatesDisplay}
+        screenFour={RatesDisplay}
+        screenFive={RatesDisplay}/>
     </ImageBackground>
   </ImageBackground>
 );
