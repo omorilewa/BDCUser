@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { View, Text, Image } from 'react-native';
+import moment from 'moment';
 import { HistoricRatesStyles as styles } from '../styles';
 import { getImageFromCurrency } from '../dataApi';
 
@@ -20,11 +21,13 @@ export default class HistoricRatesItem extends Component {
 
   render() {
     const { ratesPerDate, date } = this.state;
+    const formattedDate = moment(date).format('ddd, MMM D');
+
     return (
       <Fragment>
         <View style={styles.bodyRowView}>
           <View style={styles.dateColumn}>
-            <Text style={styles.dateText}>{date}</Text>
+            <Text style={styles.dateText}>{formattedDate}</Text>
           </View>
           <Fragment>
             <View style={styles.currDataView}>
