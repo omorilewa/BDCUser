@@ -1,151 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<RatesDisplay /> renders the RatesDisplay component correctly 1`] = `
-<View>
-  <View
-    style={
-      Array [
-        Object {
-          "flexDirection": "row",
-        },
-        Object {
-          "justifyContent": "space-between",
-          "marginTop": 6,
-          "paddingLeft": 18,
-          "paddingRight": 18,
-        },
-      ]
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginTop": 150,
     }
-  >
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "white",
-            "fontFamily": "OpenSans-Italic",
-            "fontSize": 14,
-            "marginLeft": 4,
-          }
-        }
-      >
-        Wed, 29th April
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "white",
-            "fontFamily": "OpenSans-Italic",
-            "fontSize": 14,
-            "marginLeft": 4,
-          }
-        }
-      >
-        Currency
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "borderRadius": 4,
-              "height": 14,
-              "marginTop": 2,
-              "width": 14,
-            },
-            Object {
-              "backgroundColor": "#FF9E3D",
-            },
-          ]
-        }
-      />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "white",
-            "fontFamily": "OpenSans-Italic",
-            "fontSize": 14,
-            "marginLeft": 4,
-          }
-        }
-      >
-        Buy Range
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "borderRadius": 4,
-              "height": 14,
-              "marginTop": 2,
-              "width": 14,
-            },
-            Object {
-              "backgroundColor": "#FF0000",
-            },
-          ]
-        }
-      />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "white",
-            "fontFamily": "OpenSans-Italic",
-            "fontSize": 14,
-            "marginLeft": 4,
-          }
-        }
-      >
-        Sell Range
-      </Text>
-    </View>
-  </View>
+  }
+>
   <Text
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 18,
+      }
+    }
   >
-    Hello from the other side
+    No rates available for this location
   </Text>
 </View>
 `;

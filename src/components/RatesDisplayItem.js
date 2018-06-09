@@ -3,7 +3,7 @@ import { View, Text, Image, FlatList } from 'react-native';
 import { RateScreenStyles as styles } from '../styles';
 import { getImageFromCurrency } from '../dataApi';
 
-export default class Rat extends Component {
+export default class RatesDisplayItem extends Component {
   state = {
     rates: this.props.rates,
     date: this.props.date
