@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { View, FlatList, ActivityIndicator } from 'react-native';
 import { Query } from 'react-apollo';
 import { HistoricRatesStyles as styles } from '../styles';
@@ -35,20 +35,20 @@ export default class HistoricRatesBody extends PureComponent {
             );
           }
           if (data) {
-            const transformedData = sortRatesByDate(data.computedRates);
+            const ratesSortedByDate = sortRatesByDate(data.computedRates);
             return (
               <View style={styles.bodyDataItem}>
                 <FlatList
-                  data={transformedData}
+                  data={ratesSortedByDate}
                   ListEmptyComponent={NoData}
                   keyExtractor={(item, index) => index.toString()}
                   renderItem={({ item, index }) =>
-                    <View key={index}>
+                    <Fragment key={index}>
                       <HistoricRatesItem
                         ratesPerDate={item}
                         date={item[0].date}
                       />
-                    </View>
+                    </Fragment>
                   }
                 />
               </View>

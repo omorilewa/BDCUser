@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import {
   ActivityIndicator,
-  ScrollView,
   Text,
   TouchableOpacity,
   View,
@@ -54,35 +53,33 @@ export default class HistoricRatesTable extends Component {
           </TouchableOpacity>
         </View>
         <HistoricRatesHeader />
-        <ScrollView>
-          <Query query={GET_LOCATION}>
-            {({ data, error, loading }) => {
-              if (loading) {
-                return (
-                  <View style={styles.loaderView}>
-                    <ActivityIndicator size="large" />
-                  </View>
-                );
-              } else if (error) {
-                const isNetworkError = error.toString().includes('Network error');
-                return (
-                  <View style={styles.errorView}>
-                    <Whoops message={isNetworkError ?
-                      'Network Error!' :
-                      'Error while fetching locations'}
-                    />
-                  </View>
-                );
-              }
-              if (data) {
-                const locationName = this.props.navigation.state.routeName;
-                const { locations } = data;
-                const locationId = getLocationId(locations, locationName);
-                return <HistoricRatesBody locationId={locationId} />;
-              }
-            }}
-          </Query>
-        </ScrollView>
+        <Query query={GET_LOCATION}>
+          {({ data, error, loading }) => {
+            if (loading) {
+              return (
+                <View style={styles.loaderView}>
+                  <ActivityIndicator size="large" />
+                </View>
+              );
+            } else if (error) {
+              const isNetworkError = error.toString().includes('Network error');
+              return (
+                <View style={styles.errorView}>
+                  <Whoops message={isNetworkError ?
+                    'Network Error!' :
+                    'Error while fetching locations'}
+                  />
+                </View>
+              );
+            }
+            if (data) {
+              const locationName = this.props.navigation.state.routeName;
+              const { locations } = data;
+              const locationId = getLocationId(locations, locationName);
+              return <HistoricRatesBody locationId={locationId} />;
+            }
+          }}
+        </Query>
       </Fragment>
     );
   }
