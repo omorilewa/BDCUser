@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { View, FlatList, ActivityIndicator } from 'react-native';
 import { Query } from 'react-apollo';
 import { HistoricRatesStyles as styles } from '../styles';
-import { HistoricRatesItem, Whoops } from '.';
+import { HistoricRatesItem, Whoops, NoData } from '.';
 import { GET_COMPUTED_RATES } from '../operations';
 import { sortRatesByDate } from '../dataApi';
 
@@ -36,6 +36,7 @@ export default class HistoricRatesBody extends PureComponent {
               <View style={styles.bodyDataItem}>
                 <FlatList
                   data={transformedData}
+                  ListEmptyComponent={NoData}
                   keyExtractor={(item, index) => index.toString()}
                   renderItem={({ item, index }) =>
                     <View key={index}>
