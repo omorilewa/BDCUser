@@ -344,14 +344,17 @@ export const HistoricRatesStyles = StyleSheet.create({
     flexDirection: 'row',
   },
   bodyDataItem: {
-    marginTop: 10
+    marginTop: 10,
+    flex: 1
   },
   currDataView: {
     width: '20%',
+    marginBottom: 10
   },
   ratesItemView: {
     width: '25%',
     alignItems: 'center',
+    marginBottom: 10
   },
   currItemView: {
     flexDirection: 'row',
@@ -359,7 +362,8 @@ export const HistoricRatesStyles = StyleSheet.create({
   },
   ratesText: {
     color: 'white',
-    fontFamily: 'OpenSans-Regular'
+    fontFamily: 'OpenSans-Regular',
+    marginBottom: 5
   },
   dateText: {
     fontFamily: 'OpenSans-Italic',
