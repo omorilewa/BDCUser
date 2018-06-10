@@ -20,12 +20,14 @@ exports[`<NoData /> renders the NoData component correctly 1`] = `
           "fontFamily": "OpenSans-SemiBold",
         },
         Object {
+          "color": "white",
+          "fontSize": 20,
           "paddingTop": 160,
         },
       ]
     }
   >
-    No data available yet
+    No data available for this location
   </Text>
 </View>
 `;
