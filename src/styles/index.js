@@ -401,4 +401,11 @@ export const HistoricRatesStyles = StyleSheet.create({
     color: 'red',
     fontFamily: 'OpenSans-SemiBold',
   },
+  noDataView: {
+    height: 400,
+    alignItems: 'center',
+  },
+  noDataText: {
+    paddingTop: 160
+  }
 });
