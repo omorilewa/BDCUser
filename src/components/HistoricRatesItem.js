@@ -21,7 +21,7 @@ export default class HistoricRatesItem extends Component {
 
   render() {
     const { ratesPerDate, date } = this.state;
-    const sizedRates = trimRates(ratesPerDate);
+    const trimmedRates = trimRates(ratesPerDate);
     const formattedDate = moment(date).format('ddd, MMM D');
 
     return (
@@ -32,7 +32,7 @@ export default class HistoricRatesItem extends Component {
           </View>
           <Fragment>
             <View style={styles.currDataView}>
-              {sizedRates.map((rate, index) => (
+              {trimmedRates.map((rate, index) => (
                 <View style={styles.currItemView} key={index}>
                   <Image source={getImageFromCurrency(rate.currency)} style={styles.currImage}/>
                   <Text style={styles.ratesText}>{rate.currency}</Text>
@@ -40,12 +40,12 @@ export default class HistoricRatesItem extends Component {
               ))}
             </View>
             <View style={styles.ratesItemView}>
-              {sizedRates.map((rate, index) => (
+              {trimmedRates.map((rate, index) => (
                 <Text key={index} style={styles.ratesText}>{rate.buyRate}</Text>
               ))}
             </View>
             <View style={styles.ratesItemView}>
-              {sizedRates.map((rate, index) => (
+              {trimmedRates.map((rate, index) => (
                 <Text key={index} style={styles.ratesText}>{rate.sellRate}</Text>
               ))}
             </View>
