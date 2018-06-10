@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
 import { HistoricRatesStyles as styles } from '../styles';
 
+const noDataText = 'No data available for this location';
+
 export default class NoData extends PureComponent {
   render() {
     return (
@@ -13,7 +15,7 @@ export default class NoData extends PureComponent {
               styles.noDataText
             ]
           }>
-          No data available for this location
+          {noDataText}
         </Text>
       </View>
     );
