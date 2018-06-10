@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, FlatList, ActivityIndicator } from 'react-native';
+import { View, FlatList, ActivityIndicator, Text } from 'react-native';
 import { Query } from 'react-apollo';
 import { HistoricRatesStyles as styles } from '../styles';
 import { HistoricRatesItem, Whoops, NoData } from '.';
@@ -18,6 +18,13 @@ export default class HistoricRatesBody extends PureComponent {
       <Query query={GET_COMPUTED_RATES} variables={{ locationId }}>
         {({ data, loading, error }) => {
           if (error) {
+            if(error.toString().includes('Network error')) {
+              return (
+                <View style={styles.errorView}>
+                  <Whoops message="Network Error! Check your connection" />
+                </View>
+              );
+            }
             return (
               <View style={styles.errorView}>
                 <Whoops message="Error while fetching rates" />

@@ -64,7 +64,18 @@ export default class HistoricRatesTable extends Component {
                   </View>
                 );
               } else if (error) {
-                return <Whoops message="Error while fetching locations" />;
+                if(error.toString().includes('Network error')) {
+                  return (
+                    <View style={styles.errorView}>
+                      <Whoops message="Network Error! Check your connection" />
+                    </View>
+                  );
+                }
+                return (
+                  <View style={styles.errorView}>
+                    <Whoops message="Error while fetching locations" />
+                  </View>
+                );
               }
               if (data) {
                 const locationName = this.props.navigation.state.routeName;
