@@ -18,6 +18,7 @@ exports[`<NoData /> renders the NoData component correctly 1`] = `
         Object {
           "color": "red",
           "fontFamily": "OpenSans-SemiBold",
+          "fontSize": 18,
         },
         Object {
           "color": "white",

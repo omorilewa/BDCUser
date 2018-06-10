@@ -32,6 +32,7 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
   <View
     style={
       Object {
+        "marginBottom": 10,
         "width": "20%",
       }
     }
@@ -66,6 +67,7 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
           Object {
             "color": "white",
             "fontFamily": "OpenSans-Regular",
+            "marginBottom": 5,
           }
         }
       >
@@ -102,6 +104,7 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
           Object {
             "color": "white",
             "fontFamily": "OpenSans-Regular",
+            "marginBottom": 5,
           }
         }
       >
@@ -113,6 +116,7 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
     style={
       Object {
         "alignItems": "center",
+        "marginBottom": 10,
         "width": "25%",
       }
     }
@@ -125,6 +129,7 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
         Object {
           "color": "white",
           "fontFamily": "OpenSans-Regular",
+          "marginBottom": 5,
         }
       }
     >
@@ -138,6 +143,7 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
         Object {
           "color": "white",
           "fontFamily": "OpenSans-Regular",
+          "marginBottom": 5,
         }
       }
     >
@@ -148,6 +154,7 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
     style={
       Object {
         "alignItems": "center",
+        "marginBottom": 10,
         "width": "25%",
       }
     }
@@ -160,6 +167,7 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
         Object {
           "color": "white",
           "fontFamily": "OpenSans-Regular",
+          "marginBottom": 5,
         }
       }
     >
@@ -173,6 +181,7 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
         Object {
           "color": "white",
           "fontFamily": "OpenSans-Regular",
+          "marginBottom": 5,
         }
       }
     >

@@ -9,6 +9,7 @@ exports[`<Whoops /> renders the Whoops component correctly 1`] = `
     Object {
       "color": "red",
       "fontFamily": "OpenSans-SemiBold",
+      "fontSize": 18,
     }
   }
 >
