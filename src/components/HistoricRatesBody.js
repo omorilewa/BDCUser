@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, FlatList, ActivityIndicator, Text } from 'react-native';
+import { View, FlatList, ActivityIndicator } from 'react-native';
 import { Query } from 'react-apollo';
 import { HistoricRatesStyles as styles } from '../styles';
 import { HistoricRatesItem, Whoops, NoData } from '.';
