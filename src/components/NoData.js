@@ -13,7 +13,7 @@ export default class NoData extends PureComponent {
               styles.noDataText
             ]
           }>
-          No data available yet
+          No data available for this location
         </Text>
       </View>
     );

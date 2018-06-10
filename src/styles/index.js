@@ -406,6 +406,8 @@ export const HistoricRatesStyles = StyleSheet.create({
     alignItems: 'center',
   },
   noDataText: {
+    color: 'white',
+    fontSize: 20,
     paddingTop: 160
   }
 });
