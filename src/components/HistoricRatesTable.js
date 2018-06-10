@@ -64,16 +64,13 @@ export default class HistoricRatesTable extends Component {
                   </View>
                 );
               } else if (error) {
-                if(error.toString().includes('Network error')) {
-                  return (
-                    <View style={styles.errorView}>
-                      <Whoops message="Network Error! Check your connection" />
-                    </View>
-                  );
-                }
+                const isNetworkError = error.toString().includes('Network error');
                 return (
                   <View style={styles.errorView}>
-                    <Whoops message="Error while fetching locations" />
+                    <Whoops message={isNetworkError ?
+                      'Network Error!' :
+                      'Error while fetching locations'}
+                    />
                   </View>
                 );
               }

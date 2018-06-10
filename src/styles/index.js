@@ -404,6 +404,7 @@ export const HistoricRatesStyles = StyleSheet.create({
   errorText: {
     color: 'red',
     fontFamily: 'OpenSans-SemiBold',
+    fontSize: 18,
   },
   noDataView: {
     height: 400,
