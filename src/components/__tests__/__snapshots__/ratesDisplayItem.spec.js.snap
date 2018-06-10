@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RatesDisplay /> renders the RatesDisplay component correctly 1`] = `
+exports[`<RatesDisplayItem /> renders the RatesDisplayItem component correctly 1`] = `
 <View
   style={
     Object {

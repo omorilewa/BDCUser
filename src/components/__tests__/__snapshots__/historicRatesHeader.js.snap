@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HistoricRatesHeader /> renders the HistoricRatesHeader component correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "marginTop": 15,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "width": "30%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "fontFamily": "OpenSans-Italic",
+          "fontSize": 13,
+        }
+      }
+    >
+      Date
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "fontFamily": "OpenSans-Italic",
+          "fontSize": 13,
+        }
+      }
+    >
+      Currency
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginLeft": 0,
+        "paddingLeft": 0,
+        "width": "25%",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/assets/img/ngr.png",
+        }
+      }
+      style={
+        Object {
+          "height": 10,
+          "marginRight": 5,
+          "width": 20,
+        }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "fontFamily": "OpenSans-Italic",
+          "fontSize": 13,
+        }
+      }
+    >
+      Buy Rate
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "width": "25%",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/assets/img/ngr.png",
+        }
+      }
+      style={
+        Object {
+          "height": 10,
+          "marginRight": 5,
+          "width": 20,
+        }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "fontFamily": "OpenSans-Italic",
+          "fontSize": 13,
+        }
+      }
+    >
+      Sell Rate
+    </Text>
+  </View>
+</View>
+`;

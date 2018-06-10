@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NoData /> renders the NoData component correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "height": 400,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "red",
+          "fontFamily": "OpenSans-SemiBold",
+        },
+        Object {
+          "paddingTop": 160,
+        },
+      ]
+    }
+  >
+    No data available yet
+  </Text>
+</View>
+`;
