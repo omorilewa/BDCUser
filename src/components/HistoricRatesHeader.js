@@ -7,7 +7,7 @@ export default class HistoricRatesHeader extends PureComponent {
   render() {
     return (
       <View style={styles.tableHeading}>
-        <View style={styles.dateColumn}>
+        <View style={styles.dateHeading}>
           <Text style={styles.headerTextRow}>Date</Text>
         </View>
         <View style={styles.currencyColumn}>
