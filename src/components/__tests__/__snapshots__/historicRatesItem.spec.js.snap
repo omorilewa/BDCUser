@@ -11,6 +11,10 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
   <View
     style={
       Object {
+        "borderLeftColor": "yellow",
+        "borderLeftWidth": 1,
+        "marginBottom": 15,
+        "marginTop": 5,
         "width": "30%",
       }
     }
@@ -23,6 +27,7 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
         Object {
           "color": "yellow",
           "fontFamily": "OpenSans-Italic",
+          "marginLeft": 5,
         }
       }
     >
@@ -33,160 +38,194 @@ exports[`<HistoricRatesItem /> renders the HistoricRatesItem component correctly
     style={
       Object {
         "marginBottom": 10,
-        "width": "20%",
+        "width": "70%",
       }
     }
   >
     <View
       style={
         Object {
-          "alignItems": "center",
           "flexDirection": "row",
         }
       }
     >
-      <Image
-        source={
-          Object {
-            "testUri": "../../../src/assets/img/usd.png",
-          }
-        }
+      <View
         style={
           Object {
-            "height": 10,
-            "marginRight": 5,
-            "width": 20,
-          }
-        }
-      />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "white",
-            "fontFamily": "OpenSans-Regular",
-            "marginBottom": 5,
+            "alignItems": "center",
+            "flexDirection": "row",
+            "width": "35%",
           }
         }
       >
-        USD
-      </Text>
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/assets/img/usd.png",
+            }
+          }
+          style={
+            Object {
+              "height": 10,
+              "marginRight": 5,
+              "width": 20,
+            }
+          }
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "white",
+              "fontFamily": "OpenSans-Regular",
+              "marginBottom": 5,
+            }
+          }
+        >
+          USD
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "width": "35%",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "white",
+              "fontFamily": "OpenSans-Regular",
+              "marginBottom": 5,
+            }
+          }
+        >
+          330
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "width": "35%",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "white",
+              "fontFamily": "OpenSans-Regular",
+              "marginBottom": 5,
+            }
+          }
+        >
+          347
+        </Text>
+      </View>
     </View>
     <View
       style={
         Object {
-          "alignItems": "center",
           "flexDirection": "row",
         }
       }
     >
-      <Image
-        source={
-          Object {
-            "testUri": "../../../src/assets/img/eur.png",
-          }
-        }
+      <View
         style={
           Object {
-            "height": 10,
-            "marginRight": 5,
-            "width": 20,
-          }
-        }
-      />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "white",
-            "fontFamily": "OpenSans-Regular",
-            "marginBottom": 5,
+            "alignItems": "center",
+            "flexDirection": "row",
+            "width": "35%",
           }
         }
       >
-        EUR
-      </Text>
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/assets/img/eur.png",
+            }
+          }
+          style={
+            Object {
+              "height": 10,
+              "marginRight": 5,
+              "width": 20,
+            }
+          }
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "white",
+              "fontFamily": "OpenSans-Regular",
+              "marginBottom": 5,
+            }
+          }
+        >
+          EUR
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "width": "35%",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "white",
+              "fontFamily": "OpenSans-Regular",
+              "marginBottom": 5,
+            }
+          }
+        >
+          415
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "width": "35%",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "white",
+              "fontFamily": "OpenSans-Regular",
+              "marginBottom": 5,
+            }
+          }
+        >
+          418
+        </Text>
+      </View>
     </View>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "marginBottom": 10,
-        "width": "25%",
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "white",
-          "fontFamily": "OpenSans-Regular",
-          "marginBottom": 5,
-        }
-      }
-    >
-      330
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "white",
-          "fontFamily": "OpenSans-Regular",
-          "marginBottom": 5,
-        }
-      }
-    >
-      415
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "marginBottom": 10,
-        "width": "25%",
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "white",
-          "fontFamily": "OpenSans-Regular",
-          "marginBottom": 5,
-        }
-      }
-    >
-      347
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "white",
-          "fontFamily": "OpenSans-Regular",
-          "marginBottom": 5,
-        }
-      }
-    >
-      418
-    </Text>
   </View>
 </View>
 `;
