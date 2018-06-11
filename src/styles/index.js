@@ -343,22 +343,30 @@ export const HistoricRatesStyles = StyleSheet.create({
   bodyRowView: {
     flexDirection: 'row',
   },
+  bottomMargin: {
+    marginBottom: 10,
+    width: '70%'
+
+  },
   bodyDataItem: {
     marginTop: 10,
     flex: 1
   },
-  currDataView: {
-    width: '20%',
-    marginBottom: 10
-  },
   ratesItemView: {
-    width: '25%',
+    width: '35%',
     alignItems: 'center',
-    marginBottom: 10
+  },
+  listView: {
+    paddingBottom: 80,
   },
   currItemView: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: '35%'
+
+  },
+  flex: {
+    flex: 1
   },
   ratesText: {
     color: 'white',
@@ -367,15 +375,23 @@ export const HistoricRatesStyles = StyleSheet.create({
   },
   dateText: {
     fontFamily: 'OpenSans-Italic',
-    color: 'yellow'
+    color: 'yellow',
+    marginLeft: 5
   },
   currImage: {
     width: 20,
     height: 10,
     marginRight: 5,
   },
+  dateHeading:{
+    width: '30%',
+  },
   dateColumn: {
-    width: '30%'
+    width: '30%',
+    marginBottom: 15,
+    marginTop: 5,
+    borderLeftWidth: 1,
+    borderLeftColor: 'yellow'
   },
   currencyColumn: {
     width: '20%'
