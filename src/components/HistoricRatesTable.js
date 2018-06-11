@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import {
   ActivityIndicator,
   Text,
@@ -28,7 +28,7 @@ export default class HistoricRatesTable extends Component {
 
   render() {
     return (
-      <Fragment>
+      <View style={styles.flex}>
         <View style={styles.filterView}>
           <Text style={styles.filterText}>Showing: </Text>
           <TouchableOpacity onPress={() => { this.dropDown && this.dropDown.show(); }}>
@@ -80,7 +80,7 @@ export default class HistoricRatesTable extends Component {
             }
           }}
         </Query>
-      </Fragment>
+      </View>
     );
   }
 }
