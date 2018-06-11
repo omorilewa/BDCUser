@@ -343,35 +343,55 @@ export const HistoricRatesStyles = StyleSheet.create({
   bodyRowView: {
     flexDirection: 'row',
   },
-  bodyDataItem: {
-    marginTop: 10
+  bottomMargin: {
+    marginBottom: 10,
+    width: '70%'
+
   },
-  currDataView: {
-    width: '20%',
+  bodyDataItem: {
+    marginTop: 10,
+    flex: 1
   },
   ratesItemView: {
-    width: '25%',
+    width: '35%',
     alignItems: 'center',
+  },
+  listView: {
+    paddingBottom: 80,
   },
   currItemView: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: '35%'
+
+  },
+  flex: {
+    flex: 1
   },
   ratesText: {
     color: 'white',
-    fontFamily: 'OpenSans-Regular'
+    fontFamily: 'OpenSans-Regular',
+    marginBottom: 5
   },
   dateText: {
     fontFamily: 'OpenSans-Italic',
-    color: 'yellow'
+    color: 'yellow',
+    marginLeft: 5
   },
   currImage: {
     width: 20,
     height: 10,
     marginRight: 5,
   },
+  dateHeading:{
+    width: '30%',
+  },
   dateColumn: {
-    width: '30%'
+    width: '30%',
+    marginBottom: 15,
+    marginTop: 5,
+    borderLeftWidth: 1,
+    borderLeftColor: 'yellow'
   },
   currencyColumn: {
     width: '20%'
@@ -400,5 +420,15 @@ export const HistoricRatesStyles = StyleSheet.create({
   errorText: {
     color: 'red',
     fontFamily: 'OpenSans-SemiBold',
+    fontSize: 18,
   },
+  noDataView: {
+    height: 400,
+    alignItems: 'center',
+  },
+  noDataText: {
+    color: 'white',
+    fontSize: 20,
+    paddingTop: 160
+  }
 });

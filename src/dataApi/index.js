@@ -70,3 +70,27 @@ export const sortTodayRates = (data) => {
     return acc;
   }, {});
 };
+
+export const restructureRates = (dateRates) => {
+  const morningRates = dateRates.filter((rates) => rates.periodOfTheDay === 'MORNING');
+  const afternoonRates = dateRates.filter((rates) => rates.periodOfTheDay === 'AFTERNOON');
+  const eveningRates = dateRates.filter((rates) => rates.periodOfTheDay === 'EVENING');
+  const restructuredRates = [...eveningRates, ...afternoonRates, ...morningRates];
+  return restructuredRates;
+};
+
+export const stripCurrencyToOneInstance = (structuredRates) => {
+  const USDItem = structuredRates.find((rate) => rate.currency === 'USD');
+  const GBPItem = structuredRates.find((rate) => rate.currency === 'GBP');
+  const EURItem = structuredRates.find((rate) => rate.currency === 'EUR');
+  const YENItem = structuredRates.find((rate) => rate.currency === 'YEN');
+  const allCurrencyRates = [USDItem, GBPItem, EURItem, YENItem];
+  return allCurrencyRates.filter(Boolean);
+};
+
+export const trimRates = (ratesArray) => {
+  const ratesArrayCopy = ratesArray.slice();
+  const reorderedRates = restructureRates(ratesArrayCopy);
+  const strippedRatesArray = stripCurrencyToOneInstance(reorderedRates);
+  return strippedRatesArray;
+};

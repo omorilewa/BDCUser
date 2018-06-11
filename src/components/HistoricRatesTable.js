@@ -1,7 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import {
   ActivityIndicator,
-  ScrollView,
   Text,
   TouchableOpacity,
   View,
@@ -29,7 +28,7 @@ export default class HistoricRatesTable extends Component {
 
   render() {
     return (
-      <Fragment>
+      <View style={styles.flex}>
         <View style={styles.filterView}>
           <Text style={styles.filterText}>Showing: </Text>
           <TouchableOpacity onPress={() => { this.dropDown && this.dropDown.show(); }}>
@@ -54,28 +53,34 @@ export default class HistoricRatesTable extends Component {
           </TouchableOpacity>
         </View>
         <HistoricRatesHeader />
-        <ScrollView>
-          <Query query={GET_LOCATION}>
-            {({ data, error, loading }) => {
-              if (loading) {
-                return (
-                  <View style={styles.loaderView}>
-                    <ActivityIndicator size="large" />
-                  </View>
-                );
-              } else if (error) {
-                return <Whoops message="Error while fetching locations" />;
-              }
-              if (data) {
-                const locationName = this.props.navigation.state.routeName;
-                const { locations } = data;
-                const locationId = getLocationId(locations, locationName);
-                return <HistoricRatesBody locationId={locationId} />;
-              }
-            }}
-          </Query>
-        </ScrollView>
-      </Fragment>
+        <Query query={GET_LOCATION}>
+          {({ data, error, loading }) => {
+            if (loading) {
+              return (
+                <View style={styles.loaderView}>
+                  <ActivityIndicator size="large" />
+                </View>
+              );
+            } else if (error) {
+              const isNetworkError = error.toString().includes('Network error');
+              return (
+                <View style={styles.errorView}>
+                  <Whoops message={isNetworkError ?
+                    'Network Error!' :
+                    'Error while fetching locations'}
+                  />
+                </View>
+              );
+            }
+            if (data) {
+              const locationName = this.props.navigation.state.routeName;
+              const { locations } = data;
+              const locationId = getLocationId(locations, locationName);
+              return <HistoricRatesBody locationId={locationId} />;
+            }
+          }}
+        </Query>
+      </View>
     );
   }
 }

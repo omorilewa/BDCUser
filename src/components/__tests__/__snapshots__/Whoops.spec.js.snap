@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Whoops /> renders the Whoops component correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "red",
+      "fontFamily": "OpenSans-SemiBold",
+      "fontSize": 18,
+    }
+  }
+>
+  An error occured
+</Text>
+`;

@@ -9,16 +9,17 @@ const uri = 'https://bdc-api.herokuapp.com/api/graphql';
 // create a new httpLink accepting the uri as a config option
 const httpLink = new HttpLink({ uri });
 
+/* eslint-disable */
 // Handle and inspect errors in the GraphQL network stack.
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
     graphQLErrors.map(({ message, locations, path }) =>
-      console.error(
+      console.log(
         `[GraphQL error]: Message: ${message}, Location: ${JSON.stringify(locations)}, Path: ${path}`,
       ),
     );
   }
-  if (networkError) console.error(`[Network error]: ${networkError}`);
+  if (networkError) console.log(`[Network error]: ${networkError}`);
 });
 
 const link = ApolloLink.from([errorLink, httpLink]);

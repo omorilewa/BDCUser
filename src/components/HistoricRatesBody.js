@@ -1,11 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { View, FlatList, ActivityIndicator } from 'react-native';
 import { Query } from 'react-apollo';
 import { HistoricRatesStyles as styles } from '../styles';
-import { HistoricRatesItem } from '.';
+import { HistoricRatesItem, Whoops, NoData } from '.';
 import { GET_COMPUTED_RATES } from '../operations';
 import { sortRatesByDate } from '../dataApi';
-import Whoops from './Whoops';
 
 export default class HistoricRatesBody extends PureComponent {
   state = {
@@ -19,9 +18,13 @@ export default class HistoricRatesBody extends PureComponent {
       <Query query={GET_COMPUTED_RATES} variables={{ locationId }}>
         {({ data, loading, error }) => {
           if (error) {
+            const isNetworkError = error.toString().includes('Network error');
             return (
               <View style={styles.errorView}>
-                <Whoops message="Error while fetching rates" />
+                <Whoops message={isNetworkError ?
+                  'Network Error!' :
+                  'Error while fetching rates'}
+                />
               </View>
             );
           } else if (loading) {
@@ -32,19 +35,21 @@ export default class HistoricRatesBody extends PureComponent {
             );
           }
           if (data) {
-            const transformedData = sortRatesByDate(data.computedRates);
+            const ratesSortedByDate = sortRatesByDate(data.computedRates);
             return (
               <View style={styles.bodyDataItem}>
                 <FlatList
-                  data={transformedData}
+                  data={ratesSortedByDate}
+                  contentContainerStyle={styles.listView}
+                  ListEmptyComponent={NoData}
                   keyExtractor={(item, index) => index.toString()}
                   renderItem={({ item, index }) =>
-                    <View key={index}>
+                    <Fragment key={index}>
                       <HistoricRatesItem
                         ratesPerDate={item}
                         date={item[0].date}
                       />
-                    </View>
+                    </Fragment>
                   }
                 />
               </View>
