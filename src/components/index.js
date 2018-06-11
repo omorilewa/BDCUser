@@ -2,6 +2,7 @@ export { default as ContentWrapper } from './ContentWrapper';
 export { default as Whoops } from './Whoops';
 export { default as NoData } from './NoData.js';
 export { default as HistoricRatesHeader } from './HistoricRatesHeader';
+export { default as ComputedRatesInterceptor } from './ComputedRatesInterceptor';
 export { default as HistoricRatesItem } from './HistoricRatesItem';
 export { default as HistoricRatesBody } from './HistoricRatesBody';
 export { default as HistoricRatesTable } from './HistoricRatesTable';
