@@ -40,6 +40,7 @@ export default class HistoricRatesBody extends PureComponent {
               <View style={styles.bodyDataItem}>
                 <FlatList
                   data={ratesSortedByDate}
+                  contentContainerStyle={styles.listView}
                   ListEmptyComponent={NoData}
                   keyExtractor={(item, index) => index.toString()}
                   renderItem={({ item, index }) =>
