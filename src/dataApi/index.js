@@ -94,3 +94,9 @@ export const trimRates = (ratesArray) => {
   const strippedRatesArray = stripCurrencyToOneInstance(reorderedRates);
   return strippedRatesArray;
 };
+
+export const spread2DArray = (rawData) => {
+  return rawData.reduce((acc, curr) => {
+    return acc.concat(curr);
+  });
+};

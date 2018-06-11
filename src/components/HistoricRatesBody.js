@@ -1,8 +1,8 @@
-import React, { PureComponent, Fragment } from 'react';
-import { View, FlatList, ActivityIndicator } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, ActivityIndicator } from 'react-native';
 import { Query } from 'react-apollo';
 import { HistoricRatesStyles as styles } from '../styles';
-import { HistoricRatesItem, Whoops, NoData } from '.';
+import { Whoops, ComputedRatesInterceptor } from '.';
 import { GET_COMPUTED_RATES } from '../operations';
 import { sortRatesByDate } from '../dataApi';
 
@@ -36,24 +36,7 @@ export default class HistoricRatesBody extends PureComponent {
           }
           if (data) {
             const ratesSortedByDate = sortRatesByDate(data.computedRates);
-            return (
-              <View style={styles.bodyDataItem}>
-                <FlatList
-                  data={ratesSortedByDate}
-                  contentContainerStyle={styles.listView}
-                  ListEmptyComponent={NoData}
-                  keyExtractor={(item, index) => index.toString()}
-                  renderItem={({ item, index }) =>
-                    <Fragment key={index}>
-                      <HistoricRatesItem
-                        ratesPerDate={item}
-                        date={item[0].date}
-                      />
-                    </Fragment>
-                  }
-                />
-              </View>
-            );
+            return <ComputedRatesInterceptor ratesSortedByDate={ratesSortedByDate} />;
           }
         }}
       </Query>
