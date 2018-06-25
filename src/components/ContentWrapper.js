@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import { ImageBackground, View, Image, TouchableHighlight, Text, Picker } from 'react-native';
+import {
+  ImageBackground,
+  View,
+  Image,
+  TouchableHighlight,
+  Text,
+  Picker
+} from 'react-native';
+import Modal from 'react-native-modal';
 import { Input, Item } from 'native-base';
 import { GeneralStyles as styles } from '../styles';
 import Images from '@assets/images';
-import Modal from 'react-native-modal';
 
 class ContentWrapper extends Component {
 
