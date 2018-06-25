@@ -206,6 +206,83 @@ export const GeneralStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent:'center'
   },
+  pickerWrapper: {
+    width: '35%',
+    borderBottomColor: 'black',
+  },
+  arrow: {
+    width: 40,
+    height: 35,
+    marginTop: 20
+  },
+  icon: {
+    fontSize: 40
+  },
+  header: {
+    backgroundColor: '#2c681a',
+    height: 60,
+    width: '100%',
+    paddingTop: 20,
+    paddingLeft: 25,
+    paddingRight: 25,
+    flexDirection: 'row',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15
+  },
+  yellow: {
+    color: '#FFFC00',
+    marginLeft: 15,
+    fontSize: 20,
+    fontFamily: 'OpenSans-SemiBold',
+  },
+  formLabel: {
+    color: '#3E3E3E',
+    fontSize: 11,
+    fontFamily: 'montserrat-bold',
+    marginBottom: 7,
+  },
+  item: {
+    borderBottomColor: 'black',
+    width: '85%'
+  },
+  items: {
+    marginBottom: 15,
+    flexDirection: 'row',
+    borderBottomColor: 'black',
+    width: '100%'
+  },
+  select: {
+    fontSize: 16,
+    marginTop: 10
+  },
+  modalContent: {
+    paddingBottom: 20,
+    backgroundColor:'transparent',
+  },
+  buttonBody: {
+    marginTop: 10,
+    height: 40,
+    backgroundColor: '#19B01D',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '80%'
+  },
+  formStyle: {
+    backgroundColor: 'white',
+    // paddingRight: 20,
+    paddingBottom: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
+    // paddingLeft: 20
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 14
+  },
+  converterView: {
+    flexDirection: 'row',
+    justifyContent:'space-between'
+  },
   outerView: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
@@ -215,8 +292,8 @@ export const GeneralStyles = StyleSheet.create({
     backgroundColor:'rgba(0,0,0,.7)'
   },
   calcImg: {
-    width: 25,
-    height: 33
+    width: 22,
+    height: 28
   },
   wrapperImage: {
     width: '100%',

@@ -1,22 +1,12 @@
 import React from 'react';
 import { ImageBackground, Text, View, Image } from 'react-native';
 import { RateScreenStyles as styles } from '../styles';
-import { TabNav, RatesDisplay } from '.';
+import { TabNav, RatesDisplay, ContentWrapper } from '.';
 import Images from '@assets/images';
 
 const Rates = () => (
-  <ImageBackground
-    source={Images.background}
-    style={styles.imagebg}
-  >
+  <ContentWrapper>
     <View style={styles.outerPadding}>
-      <View style={styles.outerView}>
-        <View style={styles.calcView}>
-          <Image
-            style={styles.img}
-            source={Images.converter}/>
-        </View>
-      </View>
       <View style={{ height: '20%' }}>
         <Text style={styles.headerText}>Bureau De Change FX Rates by Location</Text>
         <Text style={styles.subText}>Rates are updated 3 times daily by BDCs in these locations.</Text>
@@ -49,7 +39,7 @@ const Rates = () => (
         screenFour={RatesDisplay}
         screenFive={RatesDisplay}/>
     </ImageBackground>
-  </ImageBackground>
+  </ContentWrapper>
 );
 
 export default Rates;
