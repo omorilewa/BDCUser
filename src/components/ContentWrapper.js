@@ -5,17 +5,20 @@ import {
   Image,
   TouchableHighlight,
   Text,
-  Picker
+  Picker,
 } from 'react-native';
 import Modal from 'react-native-modal';
 import { Input, Item } from 'native-base';
 import { GeneralStyles as styles } from '../styles';
 import Images from '@assets/images';
 
+const PickerItem = Picker.Item;
 class ContentWrapper extends Component {
 
   state = {
-    modalVisible: null,
+    modalVisible: false,
+    lhsPickerValue: 'NGN',
+    rhsPickerValue: 'USD'
   }
 
   showModal = () => {
@@ -24,8 +27,31 @@ class ContentWrapper extends Component {
     }));
   }
 
-  render() {
+  LHSOnValueChange = (itemValue) => {
+    if (itemValue === 'NGN') {
+      this.setState({ rhsPickerValue: 'USD', lhsPickerValue: itemValue });
+      return;
+    }
+    this.setState({ lhsPickerValue: itemValue });
+  }
+  RHSPicker = () => {
+    const { lhsPickerValue } = this.state;
+    const values = ['YEN', 'NGN', 'GBP', 'USD', 'EUR'];
 
+    if (lhsPickerValue === 'NGN') {
+      return values.map((item, index) => <PickerItem key={index} label={item} value={item} />);
+    }
+    return (
+      <PickerItem label="NGN" value="NGN" />
+    );
+  }
+
+  LHSPicker = () => {
+    const values = ['NGN', 'USD', 'GBP', 'YEN', 'EUR'];
+    return values.map((item, index) => <PickerItem key={index} label={item} value={item} />);
+  }
+
+  render() {
     const {
       showModal,
       state: { modalVisible }
@@ -71,14 +97,10 @@ class ContentWrapper extends Component {
                 <View style={styles.converterView}>
                   <Item style={styles.pickerWrapper}>
                     <Picker
-                      selectedValue={this.state.language}
+                      selectedValue={this.state.lhsPickerValue}
                       style={{ height: 30, width: 130 }}
-                      onValueChange={(itemValue) => this.setState({ language: itemValue })}>
-                      <Picker.Item label="NGN" value="NGN" />
-                      <Picker.Item label="USD" value="USD" />
-                      <Picker.Item label="GBP" value="GBP" />
-                      <Picker.Item label="EUR" value="EUR" />
-                      <Picker.Item label="YEN" value="YEN" />
+                      onValueChange={this.LHSOnValueChange}>
+                      {this.LHSPicker()}
                     </Picker>
                   </Item>
                   <Image
@@ -86,14 +108,10 @@ class ContentWrapper extends Component {
                     source={Images.btn} />
                   <Item style={styles.pickerWrapper}>
                     <Picker
-                      selectedValue={this.state.language}
+                      selectedValue={this.state.rhsPickerValue}
                       style={{ height: 40, width: 130 }}
-                      onValueChange={(itemValue) => this.setState({ language: itemValue })}>
-                      <Picker.Item label="USD" value="USD" />
-                      <Picker.Item label="NGN" value="NGN" />
-                      <Picker.Item label="GBP" value="GBP" />
-                      <Picker.Item label="EUR" value="EUR" />
-                      <Picker.Item label="YEN" value="YEN" />
+                      onValueChange={(itemValue) => this.setState({ rhsPickerValue: itemValue })}>
+                      {this.RHSPicker()}
                     </Picker>
                   </Item>
                 </View>

@@ -51,14 +51,10 @@ export const DrawerStack = DrawerNavigator({
   Rates: { screen: RatesScreen },
   'About ABCON': { screen: AboutScreen },
   'Historic rates': { screen: HistoricRatesScreen },
-  Converter: { screen: ConverterScreen },
-  'Other rates': { screen: OtherRatesScreen },
-  'Market News': { screen: MarketNewsScreen },
-  'Contact us': { screen: ContactUsScreen },
 },{
   gesturesEnabled: false,
   drawerWidth: 420,
-  drawerBackgroundColor: 'transparent',
+  drawerBackgroundColor: 'black',
   contentComponent: CustomDrawerContentComponent,
   drawerPosition: 'right',
   contentOptions: {
