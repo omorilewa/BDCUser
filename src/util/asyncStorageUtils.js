@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { AsyncStorage } from 'react-native';
 
 export const setItem = async(key, value) => {
