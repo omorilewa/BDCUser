@@ -79,6 +79,16 @@ export const restructureRates = (dateRates) => {
   return restructuredRates;
 };
 
+export const conversionRate = (todaysRates, currency, rateToUse) => {
+  const returnRates = ((todaysRates, currency) => {
+    return todaysRates.find(item => item.currency === currency);
+  })(todaysRates, currency);
+
+  const actualRate = returnRates ? returnRates[rateToUse] : 'Not Found';
+
+  return actualRate;
+};
+
 export const stripCurrencyToOneInstance = (structuredRates) => {
   const USDItem = structuredRates.find((rate) => rate.currency === 'USD');
   const GBPItem = structuredRates.find((rate) => rate.currency === 'GBP');
