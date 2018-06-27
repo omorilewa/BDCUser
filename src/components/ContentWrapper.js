@@ -11,6 +11,7 @@ import Modal from 'react-native-modal';
 import { Input, Item } from 'native-base';
 import { GeneralStyles as styles } from '../styles';
 import Images from '@assets/images';
+import { getItem } from '../util';
 
 const PickerItem = Picker.Item;
 class ContentWrapper extends Component {
@@ -18,12 +19,20 @@ class ContentWrapper extends Component {
   state = {
     modalVisible: false,
     lhsPickerValue: 'NGN',
-    rhsPickerValue: 'USD'
+    rhsPickerValue: 'USD',
+    ratesData: {}
   }
 
-  showModal = () => {
+  showModal = async () => {
+    const data = await getItem('TodaysRates');
     this.setState(() => ({
       modalVisible: true
+    }));
+  }
+
+  saveRates = (ratesData) => {
+    this.setState(() => ({
+      ratesData
     }));
   }
 
@@ -34,6 +43,7 @@ class ContentWrapper extends Component {
     }
     this.setState({ lhsPickerValue: itemValue });
   }
+
   RHSPicker = () => {
     const { lhsPickerValue } = this.state;
     const values = ['YEN', 'NGN', 'GBP', 'USD', 'EUR'];
