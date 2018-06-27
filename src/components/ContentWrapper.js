@@ -12,6 +12,7 @@ import { Input, Item } from 'native-base';
 import { GeneralStyles as styles } from '../styles';
 import Images from '@assets/images';
 import { getItem } from '../util';
+import { conversionRate } from '../dataApi';
 
 const PickerItem = Picker.Item;
 class ContentWrapper extends Component {
@@ -20,13 +21,18 @@ class ContentWrapper extends Component {
     modalVisible: false,
     lhsPickerValue: 'NGN',
     rhsPickerValue: 'USD',
-    ratesData: {}
+    ratesData: {},
+    text: '',
+    conversionResult: '',
   }
 
   showModal = async () => {
-    const data = await getItem('TodaysRates');
+    const TodaysRates = await getItem('TodaysRates');
+    const ratesData = JSON.parse(TodaysRates);
     this.setState(() => ({
-      modalVisible: true
+      modalVisible: true,
+      ratesData,
+      conversionResult: ''
     }));
   }
 
@@ -36,7 +42,36 @@ class ContentWrapper extends Component {
     }));
   }
 
+  convertRate = (fromCurrency, toCurrency, inputRate) => {
+    const { ratesData } = this.state;
+    const currencyToConvert = fromCurrency === 'NGN' ? toCurrency : fromCurrency;
+    const result = conversionRate(ratesData, currencyToConvert, 'buyRate');
+    if (result !== 'Not Found') {
+      const conversionResult = fromCurrency === 'NGN' ? (inputRate / result) : (result * inputRate);
+      this.setState(() => ({ conversionResult }));
+    } else {
+      this.setState(() => ({ conversionResult: 'No buy rate exists yet' }));
+    }
+  }
+
+  onChange = (text) => {
+    if (isNaN(text)){
+      return;
+    }
+    this.setState(() => ({ text }));
+    const { lhsPickerValue, rhsPickerValue } = this.state;
+    this.convertRate(lhsPickerValue, rhsPickerValue, text);
+  }
+
   LHSOnValueChange = (itemValue) => {
+    if (itemValue === 'NGN') {
+      this.setState({ rhsPickerValue: 'USD', lhsPickerValue: itemValue });
+      return;
+    }
+    this.setState({ lhsPickerValue: itemValue });
+  }
+
+  RHSOnValueChange = (itemValue) => {
     if (itemValue === 'NGN') {
       this.setState({ rhsPickerValue: 'USD', lhsPickerValue: itemValue });
       return;
@@ -64,7 +99,13 @@ class ContentWrapper extends Component {
   render() {
     const {
       showModal,
-      state: { modalVisible }
+      state: {
+        modalVisible,
+        lhsPickerValue,
+        rhsPickerValue,
+        text,
+        conversionResult
+      }
     } = this;
 
     return (
@@ -99,7 +140,12 @@ class ContentWrapper extends Component {
               </View>
               <View style={styles.formStyle}>
                 <Item style={styles.item}>
-                  <Input placeholder='Enter amount' placeholderTextColor="#c6c6c6" />
+                  <Input
+                    value={text}
+                    onChangeText={this.onChange}
+                    keyboardType = 'numeric'
+                    placeholder='Enter amount'
+                    placeholderTextColor="#c6c6c6" />
                 </Item>
                 <View style={{ width: '80%' }}>
                   <Text style={styles.select}>Select Currency: </Text>
@@ -125,13 +171,13 @@ class ContentWrapper extends Component {
                     </Picker>
                   </Item>
                 </View>
-                <Item style={styles.item}>
-                  <Input placeholder='Latest buy rate' placeholderTextColor="#c6c6c6" />
-                </Item>
+                <View style={styles.resultView}>
+                  <Text style={styles.resultText}>{!!conversionResult && conversionResult.toFixed(4)}</Text>
+                </View>
                 <TouchableHighlight
                   underlayColor="#19B01D"
                   style={styles.buttonBody}
-                  onPress={showModal}
+                  onPress={() => this.convertRate(lhsPickerValue, rhsPickerValue, text)}
                 >
                   <Text style={styles.buttonText}>Convert</Text>
                 </TouchableHighlight>

@@ -79,14 +79,10 @@ export const restructureRates = (dateRates) => {
   return restructuredRates;
 };
 
-export const conversionRate = (todaysRates, currency, rateToUse) => {
-  const returnRates = ((todaysRates, currency) => {
-    return todaysRates.find(item => item.currency === currency);
-  })(todaysRates, currency);
-
-  const actualRate = returnRates ? returnRates[rateToUse] : 'Not Found';
-
-  return actualRate;
+export const conversionRate = (todaysRates, inputCurrency, rateToUse) => {
+  const rateItem = !!todaysRates && todaysRates.find(item => item.currency === inputCurrency);
+  const conversionRateValue = !!rateItem ? rateItem[rateToUse] : 'Not Found';
+  return conversionRateValue;
 };
 
 export const stripCurrencyToOneInstance = (structuredRates) => {

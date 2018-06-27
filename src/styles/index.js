@@ -229,16 +229,28 @@ export const GeneralStyles = StyleSheet.create({
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15
   },
+  resultView: {
+    height: 35,
+    marginTop: 12,
+    borderWidth: 0.5,
+    width: '50%',
+    alignItems: 'center'
+  },
   yellow: {
     color: '#FFFC00',
     marginLeft: 15,
     fontSize: 20,
     fontFamily: 'OpenSans-SemiBold',
   },
+  resultText: {
+    color: 'black',
+    fontSize: 20,
+    fontFamily: 'OpenSans-SemiBold'
+  },
   formLabel: {
     color: '#3E3E3E',
     fontSize: 11,
-    fontFamily: 'montserrat-bold',
+    fontFamily: 'OpenSans-Regular',
     marginBottom: 7,
   },
   item: {
@@ -269,15 +281,13 @@ export const GeneralStyles = StyleSheet.create({
   },
   formStyle: {
     backgroundColor: 'white',
-    // paddingRight: 20,
     paddingBottom: 10,
     justifyContent: 'center',
     alignItems: 'center'
-    // paddingLeft: 20
   },
   buttonText: {
     color: 'white',
-    fontSize: 14
+    fontSize: 18
   },
   converterView: {
     flexDirection: 'row',
