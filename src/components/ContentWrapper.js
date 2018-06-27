@@ -36,18 +36,14 @@ class ContentWrapper extends Component {
     }));
   }
 
-  saveRates = (ratesData) => {
-    this.setState(() => ({
-      ratesData
-    }));
-  }
-
   convertRate = (fromCurrency, toCurrency, inputRate) => {
     const { ratesData } = this.state;
     const currencyToConvert = fromCurrency === 'NGN' ? toCurrency : fromCurrency;
     const result = conversionRate(ratesData, currencyToConvert, 'buyRate');
     if (result !== 'Not Found') {
-      const conversionResult = fromCurrency === 'NGN' ? (inputRate / result) : (result * inputRate);
+      const conversionResult = fromCurrency === 'NGN' ?
+        (inputRate / result) :
+        (result * inputRate);
       this.setState(() => ({ conversionResult }));
     } else {
       this.setState(() => ({ conversionResult: 'No buy rate exists yet' }));
@@ -72,11 +68,7 @@ class ContentWrapper extends Component {
   }
 
   RHSOnValueChange = (itemValue) => {
-    if (itemValue === 'NGN') {
-      this.setState({ rhsPickerValue: 'USD', lhsPickerValue: itemValue });
-      return;
-    }
-    this.setState({ lhsPickerValue: itemValue });
+    this.setState({ rhsPickerValue: itemValue });
   }
 
   RHSPicker = () => {
@@ -99,6 +91,8 @@ class ContentWrapper extends Component {
   render() {
     const {
       showModal,
+      RHSOnValueChange,
+      LHSOnValueChange,
       state: {
         modalVisible,
         lhsPickerValue,
@@ -155,7 +149,7 @@ class ContentWrapper extends Component {
                     <Picker
                       selectedValue={this.state.lhsPickerValue}
                       style={{ height: 30, width: 130 }}
-                      onValueChange={this.LHSOnValueChange}>
+                      onValueChange={LHSOnValueChange}>
                       {this.LHSPicker()}
                     </Picker>
                   </Item>
@@ -166,7 +160,7 @@ class ContentWrapper extends Component {
                     <Picker
                       selectedValue={this.state.rhsPickerValue}
                       style={{ height: 40, width: 130 }}
-                      onValueChange={(itemValue) => this.setState({ rhsPickerValue: itemValue })}>
+                      onValueChange={RHSOnValueChange}>
                       {this.RHSPicker()}
                     </Picker>
                   </Item>
