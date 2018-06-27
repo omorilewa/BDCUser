@@ -93,6 +93,7 @@ class ContentWrapper extends Component {
       showModal,
       RHSOnValueChange,
       LHSOnValueChange,
+      onChange,
       state: {
         modalVisible,
         lhsPickerValue,
@@ -136,7 +137,7 @@ class ContentWrapper extends Component {
                 <Item style={styles.item}>
                   <Input
                     value={text}
-                    onChangeText={this.onChange}
+                    onChangeText={onChange}
                     keyboardType = 'numeric'
                     placeholder='Enter amount'
                     placeholderTextColor="#c6c6c6" />
@@ -147,7 +148,7 @@ class ContentWrapper extends Component {
                 <View style={styles.converterView}>
                   <Item style={styles.pickerWrapper}>
                     <Picker
-                      selectedValue={this.state.lhsPickerValue}
+                      selectedValue={lhsPickerValue}
                       style={{ height: 30, width: 130 }}
                       onValueChange={LHSOnValueChange}>
                       {this.LHSPicker()}
@@ -158,7 +159,7 @@ class ContentWrapper extends Component {
                     source={Images.btn} />
                   <Item style={styles.pickerWrapper}>
                     <Picker
-                      selectedValue={this.state.rhsPickerValue}
+                      selectedValue={rhsPickerValue}
                       style={{ height: 40, width: 130 }}
                       onValueChange={RHSOnValueChange}>
                       {this.RHSPicker()}
