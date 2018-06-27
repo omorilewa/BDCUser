@@ -268,7 +268,8 @@ export const GeneralStyles = StyleSheet.create({
     marginTop: 10
   },
   modalContent: {
-    paddingBottom: 20,
+    // flex: 1,
+    // paddingBottom: 20,
     backgroundColor:'transparent',
   },
   buttonBody: {
