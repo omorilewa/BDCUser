@@ -57,6 +57,7 @@ export const sortTodayRates = (data) => {
     if (currLocation in acc) {
       if (timeofDay in acc[currLocation]) {
         acc[currLocation][timeofDay].push(curr);
+        acc[currLocation][timeofDay] = stripCurrencyToOneInstance(acc[currLocation][timeofDay]);
       }
       else {
         accItem[timeofDay] = [curr];
