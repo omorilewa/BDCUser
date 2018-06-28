@@ -41,7 +41,7 @@ class ContentWrapper extends Component {
     const currencyToConvert = fromCurrency === 'NGN' ? toCurrency : fromCurrency;
     const result = conversionRate(ratesData, currencyToConvert, 'buyRate');
     if (!result) {
-      this.setState(() => ({ conversionResult: 'No buy rate yet' }));
+      this.setState(() => ({ conversionResult: 'Rate unavailable' }));
       return;
     }
     const conversionResult = fromCurrency === 'NGN' ?

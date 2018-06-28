@@ -244,7 +244,7 @@ export const GeneralStyles = StyleSheet.create({
   },
   resultText: {
     color: 'black',
-    fontSize: 20,
+    fontSize: 17,
     fontFamily: 'OpenSans-SemiBold'
   },
   formLabel: {
@@ -268,7 +268,6 @@ export const GeneralStyles = StyleSheet.create({
     marginTop: 10
   },
   modalContent: {
-    paddingBottom: 20,
     backgroundColor:'transparent',
   },
   buttonBody: {
