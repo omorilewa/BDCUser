@@ -40,14 +40,14 @@ class ContentWrapper extends Component {
     const { ratesData } = this.state;
     const currencyToConvert = fromCurrency === 'NGN' ? toCurrency : fromCurrency;
     const result = conversionRate(ratesData, currencyToConvert, 'buyRate');
-    if (result !== 'Not Found') {
-      const conversionResult = fromCurrency === 'NGN' ?
-        (inputRate / result) :
-        (result * inputRate);
-      this.setState(() => ({ conversionResult }));
-    } else {
-      this.setState(() => ({ conversionResult: 'No buy rate exists yet' }));
+    if (!result) {
+      this.setState(() => ({ conversionResult: 'Rate unavailable' }));
+      return;
     }
+    const conversionResult = fromCurrency === 'NGN' ?
+      (inputRate / result).toFixed(4) :
+      (result * inputRate).toFixed(4);
+    this.setState(() => ({ conversionResult }));
   }
 
   onChange = (text) => {
@@ -167,7 +167,7 @@ class ContentWrapper extends Component {
                   </Item>
                 </View>
                 <View style={styles.resultView}>
-                  <Text style={styles.resultText}>{!!conversionResult && conversionResult.toFixed(4)}</Text>
+                  <Text style={styles.resultText}>{conversionResult}</Text>
                 </View>
                 <TouchableHighlight
                   underlayColor="#19B01D"

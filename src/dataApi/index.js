@@ -57,6 +57,7 @@ export const sortTodayRates = (data) => {
     if (currLocation in acc) {
       if (timeofDay in acc[currLocation]) {
         acc[currLocation][timeofDay].push(curr);
+        acc[currLocation][timeofDay] = stripCurrencyToOneInstance(acc[currLocation][timeofDay]);
       }
       else {
         accItem[timeofDay] = [curr];
@@ -81,8 +82,7 @@ export const restructureRates = (dateRates) => {
 
 export const conversionRate = (todaysRates, inputCurrency, rateToUse) => {
   const rateItem = !!todaysRates && todaysRates.find(item => item.currency === inputCurrency);
-  const conversionRateValue = !!rateItem ? rateItem[rateToUse] : 'Not Found';
-  return conversionRateValue;
+  return !!rateItem && rateItem[rateToUse];
 };
 
 export const stripCurrencyToOneInstance = (structuredRates) => {
