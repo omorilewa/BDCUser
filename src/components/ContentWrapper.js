@@ -35,7 +35,7 @@ class ContentWrapper extends Component {
   convertRate = () => {
     const { conversionRate, text, lhsPickerValue } = this.state;
     if(conversionRate && text) {
-      const conversionResult = lhsPickerValue === 'NGN' ? (text * conversionRate).toFixed(2) : (text / conversionRate).toFixed(2);
+      const conversionResult = lhsPickerValue === 'NGN' ? (text / conversionRate).toFixed(2) : (text * conversionRate).toFixed(2);
       this.setState(() => ({ conversionResult }));
     }
   }
@@ -61,7 +61,7 @@ class ContentWrapper extends Component {
       return;
     }
     if (conversionRate && text && itemValue !== 'NGN') {
-      const conversionResult = (text / conversionRate).toFixed(2);
+      const conversionResult = (text * conversionRate).toFixed(2);
       this.setState(() => ({ conversionResult }));
     }
     this.setState(() => ({ lhsPickerValue: itemValue }));
