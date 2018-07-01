@@ -11,8 +11,7 @@ import Modal from 'react-native-modal';
 import { Input, Item } from 'native-base';
 import { GeneralStyles as styles } from '../styles';
 import Images from '@assets/images';
-import { getItem } from '../util';
-import { conversionRate } from '../dataApi';
+
 
 const PickerItem = Picker.Item;
 class ContentWrapper extends Component {
@@ -21,33 +20,24 @@ class ContentWrapper extends Component {
     modalVisible: false,
     lhsPickerValue: 'NGN',
     rhsPickerValue: 'USD',
-    ratesData: {},
     text: '',
+    conversionRate: '',
     conversionResult: '',
   }
 
   showModal = async () => {
-    const TodaysRates = await getItem('TodaysRates');
-    const ratesData = JSON.parse(TodaysRates);
     this.setState(() => ({
       modalVisible: true,
-      ratesData,
       conversionResult: ''
     }));
   }
 
-  convertRate = (fromCurrency, toCurrency, inputRate) => {
-    const { ratesData } = this.state;
-    const currencyToConvert = fromCurrency === 'NGN' ? toCurrency : fromCurrency;
-    const result = conversionRate(ratesData, currencyToConvert, 'buyRate');
-    if (!result) {
-      this.setState(() => ({ conversionResult: 'Rate unavailable' }));
-      return;
+  convertRate = () => {
+    const { conversionRate, text } = this.state;
+    if(conversionRate && text ) {
+      const conversionResult = (text / conversionRate).toFixed(2);
+      this.setState(() => ({ conversionResult }));
     }
-    const conversionResult = fromCurrency === 'NGN' ?
-      (inputRate / result).toFixed(4) :
-      (result * inputRate).toFixed(4);
-    this.setState(() => ({ conversionResult }));
   }
 
   onChange = (text) => {
@@ -55,8 +45,13 @@ class ContentWrapper extends Component {
       return;
     }
     this.setState(() => ({ text }));
-    const { lhsPickerValue, rhsPickerValue } = this.state;
-    this.convertRate(lhsPickerValue, rhsPickerValue, text);
+  }
+
+  onChangeRate = (rate) => {
+    if (isNaN(rate)){
+      return;
+    }
+    this.setState(() => ({ conversionRate: rate  }));
   }
 
   LHSOnValueChange = (itemValue) => {
@@ -94,11 +89,13 @@ class ContentWrapper extends Component {
       RHSOnValueChange,
       LHSOnValueChange,
       onChange,
+      onChangeRate,
       state: {
         modalVisible,
         lhsPickerValue,
         rhsPickerValue,
         text,
+        conversionRate,
         conversionResult
       }
     } = this;
@@ -166,13 +163,21 @@ class ContentWrapper extends Component {
                     </Picker>
                   </Item>
                 </View>
+                <Item style={styles.item}>
+                  <Input
+                    value={conversionRate}
+                    onChangeText={onChangeRate}
+                    keyboardType = 'numeric'
+                    placeholder='Enter rate'
+                    placeholderTextColor="#c6c6c6" />
+                </Item>
                 <View style={styles.resultView}>
                   <Text style={styles.resultText}>{conversionResult}</Text>
                 </View>
                 <TouchableHighlight
                   underlayColor="#19B01D"
                   style={styles.buttonBody}
-                  onPress={() => this.convertRate(lhsPickerValue, rhsPickerValue, text)}
+                  onPress={this.convertRate}
                 >
                   <Text style={styles.buttonText}>Convert</Text>
                 </TouchableHighlight>
