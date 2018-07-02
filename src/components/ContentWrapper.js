@@ -32,7 +32,7 @@ class ContentWrapper extends Component {
     }));
   }
 
-  convertRate = () => {
+  convertRateOnTextChange() {
     const { conversionRate, text, lhsPickerValue } = this.state;
     if(conversionRate && text) {
       const conversionResult = lhsPickerValue === 'NGN' ? (text / conversionRate).toFixed(2) : (text * conversionRate).toFixed(2);
@@ -40,23 +40,22 @@ class ContentWrapper extends Component {
     }
   }
 
+  convertRate = () => {
+    this.convertRateOnTextChange();
+  }
+
   handleTextChange = (text) => {
     if (isNaN(text)){
       return;
     }
-    this.setState(() => ({ text }));
-    const { conversionRate, lhsPickerValue } = this.state;
-    if(conversionRate && text) {
-      const conversionResult = lhsPickerValue === 'NGN' ? (text / conversionRate).toFixed(2) : (text * conversionRate).toFixed(2);
-      this.setState(() => ({ conversionResult }));
-    }
+    this.setState(() => ({ text }), () => this.convertRateOnTextChange());
   }
 
   handleRateChange = (rate) => {
     if (isNaN(rate)){
       return;
     }
-    this.setState(() => ({ conversionRate: rate }));
+    this.setState(() => ({ conversionRate: rate }), () => this.convertRateOnTextChange());
   }
 
   LHSOnValueChange = (itemValue) => {
