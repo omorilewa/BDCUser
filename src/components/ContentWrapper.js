@@ -27,6 +27,8 @@ class ContentWrapper extends Component {
 
   showModal = async () => {
     this.setState(() => ({
+      text: '',
+      conversionRate: '',
       modalVisible: true,
       conversionResult: ''
     }));
@@ -60,7 +62,7 @@ class ContentWrapper extends Component {
 
   LHSOnValueChange = (itemValue) => {
     if (itemValue === 'NGN') {
-      this.setState(() => ({ rhsPickerValue: 'USD', lhsPickerValue: itemValue }));
+      this.setState(() => ({ rhsPickerValue: 'USD', lhsPickerValue: itemValue }), () => this.convertRateOnTextChange());
       return;
     }
     this.setState(() => ({ lhsPickerValue: itemValue }), () => this.convertRateOnTextChange());
