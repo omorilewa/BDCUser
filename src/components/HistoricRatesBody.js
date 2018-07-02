@@ -18,7 +18,7 @@ export default class HistoricRatesBody extends PureComponent {
       <Query query={GET_COMPUTED_RATES} variables={{ locationId }}>
         {({ data, loading, error }) => {
           if (error) {
-            const isNetworkError = error.toString().includes('Network error');
+            const isNetworkError = error.toString().includes('Network');
             return (
               <View style={styles.errorView}>
                 <Whoops message={isNetworkError ?

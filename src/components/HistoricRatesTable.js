@@ -24,8 +24,8 @@ export default class HistoricRatesTable extends Component {
               return (
                 <View style={styles.errorView}>
                   <Whoops message={isNetworkError ?
-                    'Network Error!' :
-                    'Error while fetching locations'}
+                    'Please check your internet connection' :
+                    'An error occured. Retry.'}
                   />
                 </View>
               );
