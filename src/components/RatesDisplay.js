@@ -5,11 +5,9 @@ import { RateScreenStyles as styles } from '../styles';
 import { Query } from 'react-apollo';
 import { sortTodayRates } from '../dataApi';
 import { GET_TODAY_RATES } from '../operations';
-import { RatesDisplayItem } from '.';
+import { RatesDisplayItem, Whoops } from '.';
 import Images from '@assets/images';
-import Whoops from './Whoops';
 import moment from 'moment';
-import { setItem } from '../util';
 
 export default class RatesDisplay extends Component {
   render() {
@@ -35,7 +33,14 @@ export default class RatesDisplay extends Component {
         <Query query={GET_TODAY_RATES}>
           {({ data, loading, error }) => {
             if (error) {
-              return <Whoops message={error} />;
+              const message = error.toString().includes('Network') ?
+                'Pls check your internet connection' :
+                'An error occured. Retry.';
+              return (
+                <View style={styles.errorView}>
+                  <Whoops message={message}/>
+                </View>
+              );
             }
             if (loading) {
               return (
@@ -45,7 +50,6 @@ export default class RatesDisplay extends Component {
               );
             }
             if (data) {
-              setItem('TodaysRates', JSON.stringify(data.todaysRates));
               const location = this.props.navigation.state.key;
               const transformedData = sortTodayRates(data)[location] || {};
               return (

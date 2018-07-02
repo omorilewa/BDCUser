@@ -61,7 +61,7 @@ export const sortTodayRates = (data) => {
       }
       else {
         accItem[timeofDay] = [curr];
-        acc[currLocation][timeofDay] = accItem;
+        acc[currLocation][timeofDay] = accItem[timeofDay];
       }
     }
     else {

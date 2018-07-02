@@ -11,8 +11,7 @@ import Modal from 'react-native-modal';
 import { Input, Item } from 'native-base';
 import { GeneralStyles as styles } from '../styles';
 import Images from '@assets/images';
-import { getItem } from '../util';
-import { conversionRate } from '../dataApi';
+
 
 const PickerItem = Picker.Item;
 class ContentWrapper extends Component {
@@ -21,54 +20,54 @@ class ContentWrapper extends Component {
     modalVisible: false,
     lhsPickerValue: 'NGN',
     rhsPickerValue: 'USD',
-    ratesData: {},
     text: '',
+    conversionRate: '',
     conversionResult: '',
   }
 
   showModal = async () => {
-    const TodaysRates = await getItem('TodaysRates');
-    const ratesData = JSON.parse(TodaysRates);
     this.setState(() => ({
       modalVisible: true,
-      ratesData,
       conversionResult: ''
     }));
   }
 
-  convertRate = (fromCurrency, toCurrency, inputRate) => {
-    const { ratesData } = this.state;
-    const currencyToConvert = fromCurrency === 'NGN' ? toCurrency : fromCurrency;
-    const result = conversionRate(ratesData, currencyToConvert, 'buyRate');
-    if (!result) {
-      this.setState(() => ({ conversionResult: 'Rate unavailable' }));
-      return;
+  convertRateOnTextChange() {
+    const { conversionRate, text, lhsPickerValue } = this.state;
+    if(conversionRate && text) {
+      const conversionResult = lhsPickerValue === 'NGN' ? (text / conversionRate).toFixed(2) : (text * conversionRate).toFixed(2);
+      this.setState(() => ({ conversionResult }));
     }
-    const conversionResult = fromCurrency === 'NGN' ?
-      (inputRate / result).toFixed(4) :
-      (result * inputRate).toFixed(4);
-    this.setState(() => ({ conversionResult }));
   }
 
-  onChange = (text) => {
+  convertRate = () => {
+    this.convertRateOnTextChange();
+  }
+
+  handleTextChange = (text) => {
     if (isNaN(text)){
       return;
     }
-    this.setState(() => ({ text }));
-    const { lhsPickerValue, rhsPickerValue } = this.state;
-    this.convertRate(lhsPickerValue, rhsPickerValue, text);
+    this.setState(() => ({ text }), () => this.convertRateOnTextChange());
+  }
+
+  handleRateChange = (rate) => {
+    if (isNaN(rate)){
+      return;
+    }
+    this.setState(() => ({ conversionRate: rate }), () => this.convertRateOnTextChange());
   }
 
   LHSOnValueChange = (itemValue) => {
     if (itemValue === 'NGN') {
-      this.setState({ rhsPickerValue: 'USD', lhsPickerValue: itemValue });
+      this.setState(() => ({ rhsPickerValue: 'USD', lhsPickerValue: itemValue }));
       return;
     }
-    this.setState({ lhsPickerValue: itemValue });
+    this.setState(() => ({ lhsPickerValue: itemValue }), () => this.convertRateOnTextChange());
   }
 
   RHSOnValueChange = (itemValue) => {
-    this.setState({ rhsPickerValue: itemValue });
+    this.setState(() => ({ rhsPickerValue: itemValue }), () => this.convertRateOnTextChange());
   }
 
   RHSPicker = () => {
@@ -90,15 +89,18 @@ class ContentWrapper extends Component {
 
   render() {
     const {
+      convertRate,
       showModal,
       RHSOnValueChange,
       LHSOnValueChange,
-      onChange,
+      handleRateChange,
+      handleTextChange,
       state: {
         modalVisible,
         lhsPickerValue,
         rhsPickerValue,
         text,
+        conversionRate,
         conversionResult
       }
     } = this;
@@ -137,7 +139,7 @@ class ContentWrapper extends Component {
                 <Item style={styles.item}>
                   <Input
                     value={text}
-                    onChangeText={onChange}
+                    onChangeText={handleTextChange}
                     keyboardType = 'numeric'
                     placeholder='Enter amount'
                     placeholderTextColor="#c6c6c6" />
@@ -166,13 +168,21 @@ class ContentWrapper extends Component {
                     </Picker>
                   </Item>
                 </View>
+                <Item style={styles.item}>
+                  <Input
+                    value={conversionRate}
+                    onChangeText={handleRateChange}
+                    keyboardType = 'numeric'
+                    placeholder='Enter rate'
+                    placeholderTextColor="#c6c6c6" />
+                </Item>
                 <View style={styles.resultView}>
                   <Text style={styles.resultText}>{conversionResult}</Text>
                 </View>
                 <TouchableHighlight
                   underlayColor="#19B01D"
                   style={styles.buttonBody}
-                  onPress={() => this.convertRate(lhsPickerValue, rhsPickerValue, text)}
+                  onPress={convertRate}
                 >
                   <Text style={styles.buttonText}>Convert</Text>
                 </TouchableHighlight>
