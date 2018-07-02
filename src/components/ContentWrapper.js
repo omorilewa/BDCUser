@@ -59,20 +59,15 @@ class ContentWrapper extends Component {
   }
 
   LHSOnValueChange = (itemValue) => {
-    const { conversionRate, text } = this.state;
     if (itemValue === 'NGN') {
       this.setState(() => ({ rhsPickerValue: 'USD', lhsPickerValue: itemValue }));
       return;
     }
-    if (conversionRate && text && itemValue !== 'NGN') {
-      const conversionResult = (text * conversionRate).toFixed(2);
-      this.setState(() => ({ conversionResult }));
-    }
-    this.setState(() => ({ lhsPickerValue: itemValue }));
+    this.setState(() => ({ lhsPickerValue: itemValue }), () => this.convertRateOnTextChange());
   }
 
   RHSOnValueChange = (itemValue) => {
-    this.setState(() => ({ rhsPickerValue: itemValue }));
+    this.setState(() => ({ rhsPickerValue: itemValue }), () => this.convertRateOnTextChange());
   }
 
   RHSPicker = () => {
