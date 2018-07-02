@@ -61,8 +61,11 @@ export const RateScreenStyles = StyleSheet.create({
     paddingTop: 15,
     backgroundColor: '#fff',
   },
+  loaderView: {
+    marginTop: '35%'
+  },
   errorView: {
-    marginTop: '50%',
+    marginTop: '35%',
     alignItems: 'center',
   },
   headerImage: {
