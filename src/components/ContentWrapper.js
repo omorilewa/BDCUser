@@ -40,14 +40,19 @@ class ContentWrapper extends Component {
     }
   }
 
-  onChange = (text) => {
+  handleTextChange = (text) => {
     if (isNaN(text)){
       return;
     }
     this.setState(() => ({ text }));
+    const { conversionRate, lhsPickerValue } = this.state;
+    if(conversionRate && text) {
+      const conversionResult = lhsPickerValue === 'NGN' ? (text / conversionRate).toFixed(2) : (text * conversionRate).toFixed(2);
+      this.setState(() => ({ conversionResult }));
+    }
   }
 
-  onChangeRate = (rate) => {
+  handleRateChange = (rate) => {
     if (isNaN(rate)){
       return;
     }
@@ -90,11 +95,12 @@ class ContentWrapper extends Component {
 
   render() {
     const {
+      convertRate,
       showModal,
       RHSOnValueChange,
       LHSOnValueChange,
-      onChange,
-      onChangeRate,
+      handleRateChange,
+      handleTextChange,
       state: {
         modalVisible,
         lhsPickerValue,
@@ -139,7 +145,7 @@ class ContentWrapper extends Component {
                 <Item style={styles.item}>
                   <Input
                     value={text}
-                    onChangeText={onChange}
+                    onChangeText={handleTextChange}
                     keyboardType = 'numeric'
                     placeholder='Enter amount'
                     placeholderTextColor="#c6c6c6" />
@@ -171,7 +177,7 @@ class ContentWrapper extends Component {
                 <Item style={styles.item}>
                   <Input
                     value={conversionRate}
-                    onChangeText={onChangeRate}
+                    onChangeText={handleRateChange}
                     keyboardType = 'numeric'
                     placeholder='Enter rate'
                     placeholderTextColor="#c6c6c6" />
@@ -182,7 +188,7 @@ class ContentWrapper extends Component {
                 <TouchableHighlight
                   underlayColor="#19B01D"
                   style={styles.buttonBody}
-                  onPress={this.convertRate}
+                  onPress={convertRate}
                 >
                   <Text style={styles.buttonText}>Convert</Text>
                 </TouchableHighlight>
