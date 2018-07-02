@@ -5,9 +5,8 @@ import { RateScreenStyles as styles } from '../styles';
 import { Query } from 'react-apollo';
 import { sortTodayRates } from '../dataApi';
 import { GET_TODAY_RATES } from '../operations';
-import { RatesDisplayItem } from '.';
+import { RatesDisplayItem, Whoops } from '.';
 import Images from '@assets/images';
-import Whoops from './Whoops';
 import moment from 'moment';
 
 export default class RatesDisplay extends Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, Text, View, Image } from 'react-native';
+import { ImageBackground, Text, View } from 'react-native';
 import { RateScreenStyles as styles } from '../styles';
 import { TabNav, RatesDisplay, ContentWrapper } from '.';
 import Images from '@assets/images';
