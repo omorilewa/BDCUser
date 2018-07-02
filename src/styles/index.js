@@ -61,6 +61,10 @@ export const RateScreenStyles = StyleSheet.create({
     paddingTop: 15,
     backgroundColor: '#fff',
   },
+  errorView: {
+    marginTop: '50%',
+    alignItems: 'center',
+  },
   headerImage: {
     width: 20,
     height: 10,
@@ -506,7 +510,7 @@ export const HistoricRatesStyles = StyleSheet.create({
   errorText: {
     color: 'red',
     fontFamily: 'OpenSans-SemiBold',
-    fontSize: 18,
+    fontSize: 16,
   },
   noDataView: {
     height: 400,
