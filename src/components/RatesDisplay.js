@@ -34,7 +34,7 @@ export default class RatesDisplay extends Component {
           {({ data, loading, error }) => {
             if (error) {
               const message = error.toString().includes('Network') ?
-                'Pls check your internet connection' :
+                'Please check your internet connection' :
                 'An error occured. Retry.';
               return (
                 <View style={styles.errorView}>

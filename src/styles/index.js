@@ -62,7 +62,7 @@ export const RateScreenStyles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   errorView: {
-    marginTop: '50%',
+    marginTop: '35%',
     alignItems: 'center',
   },
   headerImage: {

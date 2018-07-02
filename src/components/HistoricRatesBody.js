@@ -22,8 +22,8 @@ export default class HistoricRatesBody extends PureComponent {
             return (
               <View style={styles.errorView}>
                 <Whoops message={isNetworkError ?
-                  'Network Error!' :
-                  'Error while fetching rates'}
+                  'Please check your internet connection' :
+                  'An error occured. Retry.'}
                 />
               </View>
             );
