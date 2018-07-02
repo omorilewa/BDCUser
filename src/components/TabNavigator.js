@@ -5,7 +5,7 @@ const Tabnavigator = ({ screenOne, screenTwo, screenThree, screenFour, screenFiv
   const CustomTabNavigator = TabNavigator({
     Lagos: { screen: screenOne },
     Abuja: { screen: screenTwo },
-    Portharcourt: { screen: screenThree },
+    PH: { screen: screenThree },
     Kano: { screen: screenFour },
     Onitsha: { screen: screenFive },
   }, {

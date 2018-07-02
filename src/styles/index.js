@@ -420,8 +420,12 @@ export const HistoricRatesStyles = StyleSheet.create({
     fontFamily: 'OpenSans-Italic',
     fontSize: 13,
   },
-  textView: {
+  wrapper: {
     height: '100%',
+    width: '100%',
+  },
+  textView: {
+    width: '100%',
     paddingLeft: 13,
     paddingRight: 18,
   },
@@ -456,7 +460,9 @@ export const HistoricRatesStyles = StyleSheet.create({
 
   },
   flex: {
-    flex: 1
+    flex: 1,
+    paddingLeft: 13,
+    paddingRight: 18,
   },
   ratesText: {
     color: 'white',
