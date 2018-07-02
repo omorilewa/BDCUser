@@ -53,7 +53,6 @@ export const DrawerStack = DrawerNavigator({
   'Historic rates': { screen: HistoricRatesScreen },
 },{
   gesturesEnabled: false,
-  drawerWidth: 420,
   drawerBackgroundColor: 'black',
   contentComponent: CustomDrawerContentComponent,
   drawerPosition: 'right',
