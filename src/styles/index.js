@@ -34,8 +34,6 @@ export const NavStyles = StyleSheet.create({
   drawerView: {
     backgroundColor:'rgba(0,0,0,.7)',
     height: '100%',
-
-    // alignItems: 'flex-start',
   }
 });
 
