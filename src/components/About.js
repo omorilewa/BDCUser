@@ -14,7 +14,10 @@ class About extends PureComponent {
           <TouchableHighlight style={styles.aboutContent}>
             <Text style={styles.aboutText}>{aboutText}</Text>
           </TouchableHighlight>
-          <TouchableHighlight onPress={() => Linking.openURL('http://abcon.org.ng/AboutUs.aspx')} style={styles.readMoreButton}>
+          <TouchableHighlight
+            onPress={() => Linking.openURL('http://abcon.org.ng/AboutUs.aspx')}
+            underlayColor="#19B01D"
+            style={styles.readMoreButton}>
             <Text style={styles.cta}>Read more</Text>
           </TouchableHighlight>
         </View>
