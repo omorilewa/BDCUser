@@ -42,7 +42,7 @@ const CustomDrawerContentComponent = (props) =>
     style={{ width: Dimensions.get('window').width }}
   >
     <View style={styles.drawerView}>
-      <DrawerItems {...props} />
+      <DrawerItems {...props} activeBackgroundColor='rgba(0,0,0,.4)' />
     </View>
   </ImageBackground>
   ;
@@ -58,7 +58,7 @@ export const DrawerStack = DrawerNavigator({
   drawerPosition: 'right',
   contentOptions: {
     labelStyle: styles.drawerText,
-    itemStyle: styles.item
+    itemStyle: styles.item,
   }
 });
 
