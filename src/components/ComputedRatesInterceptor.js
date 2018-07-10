@@ -69,7 +69,7 @@ class ComputedRatesInterceptor extends PureComponent {
                 dropdownStyle={styles.dropdown}
                 dropdownTextStyle={styles.dropdowntext}
                 adjustFrame={(style) => {
-                  style.height = 88;
+                  style.height = 148;
                   style.top = 260;
                   return style;
                 }}

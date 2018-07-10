@@ -18,21 +18,22 @@ export const NavStyles = StyleSheet.create({
     fontSize: 17,
     color: 'white',
     fontWeight: 'normal',
-    fontFamily: 'OpenSans-Regular'
+    fontFamily: 'OpenSans-Regular',
   },
   item: {
+    width: '100%',
     borderBottomColor: '#1e331a',
     borderBottomWidth: 1,
     paddingTop: 12,
     paddingBottom: 12,
-    justifyContent: 'center',
   },
   imagebg: {
     width: '100%',
     height: '100%',
   },
   drawerView: {
-    backgroundColor:'rgba(0,0,0,.7)'
+    backgroundColor:'rgba(0,0,0,.7)',
+    height: '100%',
   }
 });
 

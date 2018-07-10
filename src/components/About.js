@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Text, View, TouchableHighlight } from 'react-native';
+import { Text, View, TouchableHighlight, Linking } from 'react-native';
 import { ContentWrapper } from '.';
 import { AboutStyles as styles } from '../styles';
 
@@ -14,7 +14,10 @@ class About extends PureComponent {
           <TouchableHighlight style={styles.aboutContent}>
             <Text style={styles.aboutText}>{aboutText}</Text>
           </TouchableHighlight>
-          <TouchableHighlight style={styles.readMoreButton}>
+          <TouchableHighlight
+            onPress={() => Linking.openURL('http://abcon.org.ng/AboutUs.aspx')}
+            underlayColor="#19B01D"
+            style={styles.readMoreButton}>
             <Text style={styles.cta}>Read more</Text>
           </TouchableHighlight>
         </View>
