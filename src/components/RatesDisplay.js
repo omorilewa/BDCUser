@@ -50,8 +50,13 @@ export default class RatesDisplay extends Component {
               );
             }
             if (data) {
+              let locationtoUse;
               const location = this.props.navigation.state.key;
-              const transformedData = sortTodayRates(data)[location] || {};
+              locationtoUse = location;
+              if (location  == 'PH') {
+                locationtoUse = 'Port-Harcourt';
+              }
+              const transformedData = sortTodayRates(data)[locationtoUse] || {};
               return (
                 <RatesDisplayItem rates={transformedData} />
               );

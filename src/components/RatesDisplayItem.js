@@ -13,6 +13,7 @@ export default class RatesDisplayItem extends Component {
     if (nextProps.rates !== prevState.rates) {
       return {
         rates: nextProps.rates,
+        date: nextProps.date
       };
     }
     return null;
@@ -41,11 +42,11 @@ export default class RatesDisplayItem extends Component {
                         <Image source={getImageFromCurrency(item.currency)} style={styles.currImage} />
                         <Text style={styles.rateText}>{item.currency}</Text>
                       </View>
-                      <View style={styles.sellRate}>
-                        <Text style={styles.rateText}>{item.sellRate}</Text>
-                      </View>
                       <View style={styles.buyRate}>
                         <Text style={styles.rateText}>{item.buyRate}</Text>
+                      </View>
+                      <View style={styles.sellRate}>
+                        <Text style={styles.rateText}>{item.sellRate}</Text>
                       </View>
                     </View>
                   )}
