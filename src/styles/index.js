@@ -37,7 +37,8 @@ export const NavStyles = StyleSheet.create({
   },
   bgImageView: {
     position: 'absolute',
-    top: 0, left: 0,
+    top: 0,
+    left: 0,
     width: '100%',
     height: '100%'
   },
@@ -143,6 +144,60 @@ export const RateScreenStyles = StyleSheet.create({
   currView: {
     width: '100%',
     height: '80%'
+  },
+  bgImageView: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%'
+  },
+  flexDrawer: {
+    flex: 1
+  },
+  resize: {
+    flex: 1,
+    resizeMode: 'cover'
+  },
+  transparent: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    justifyContent: 'center'
+  },
+  fullWidth: {
+    width: '100%',
+    marginBottom: 5
+  },
+  powered: {
+    flexDirection: 'row',
+    paddingLeft: '15%',
+    paddingRight: '15%',
+    paddingTop: 5,
+    paddingBottom: 5,
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  pText: {
+    color: '#4b5649',
+    fontSize: 10,
+    borderWidth: 0.5,
+    borderLeftColor: '#4b5649',
+    borderBottomColor: '#4b5649',
+    borderRightColor: '#4b5649',
+    borderTopColor: '#4b5649',
+    marginRight: 10,
+    marginLeft: 10,
+    padding: 3,
+    height: 22
+  },
+  footer: {
+    color: 'white',
+    fontSize: 10,
+  },
+  vr: {
+    borderLeftWidth: 1,
+    borderLeftColor: 'white',
+    height: 15,
   },
   cut: {
     width: '100%'
