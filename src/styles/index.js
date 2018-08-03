@@ -20,12 +20,73 @@ export const NavStyles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'OpenSans-Regular',
   },
+  sbsc: {
+    width: 80,
+    height: 45,
+    marginTop: 5
+  },
+  technoverse: {
+    width: 60,
+    height: 48,
+    marginTop: 5
+  },
+  logo: {
+    width: 50,
+    height: 47,
+    marginTop: 5
+  },
+  bgImageView: {
+    position: 'absolute',
+    top: 0, left: 0,
+    width: '100%',
+    height: '100%'
+  },
+  outerCover: {
+    paddingRight: '15%',
+    paddingLeft: '15%',
+    paddingBottom: '5%',
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,.5)',
+    width:'100%',
+  },
+  flexDrawer: {
+    flex: 1
+  },
+  logoView: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end'
+  },
+  hr: {
+    borderBottomWidth: 3,
+    borderBottomColor: '#4b5649',
+    height: 20,
+    width: 50
+  },
+  transparent: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    justifyContent: 'center'
+  },
+  bgImage: {
+    flex: 1,
+    resizeMode: 'cover'
+  },
   item: {
     width: '100%',
     borderBottomColor: '#1e331a',
     borderBottomWidth: 1,
     paddingTop: 12,
     paddingBottom: 12,
+  },
+  brand: {
+    flex: 1,
+    marginTop: '90%',
+    alignItems: 'center'
+  },
+  whiteLight: {
+    color: '#4b5649'
   },
   imagebg: {
     width: '100%',
@@ -77,7 +138,7 @@ export const RateScreenStyles = StyleSheet.create({
   },
   imagebg: {
     width: '100%',
-    height: '100%',
+    height: '80%',
   },
   currView: {
     width: '100%',
@@ -198,6 +259,7 @@ export const RateScreenStyles = StyleSheet.create({
     width: 14,
     height: 14,
     marginTop: 2,
+    marginRight: 3,
     borderRadius: 4,
   }
 });
