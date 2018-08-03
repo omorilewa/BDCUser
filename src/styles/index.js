@@ -437,9 +437,15 @@ export const GeneralStyles = StyleSheet.create({
 
 export const AboutStyles = StyleSheet.create({
   container: {
-    height: '100%',
     flex: 1,
     alignItems: 'center'
+  },
+  scrollContainer: {
+    height: '70%',
+  },
+  scrollContent: {
+    alignItems: 'center',
+    paddingTop: 10
   },
   cta: {
     color: 'white',
@@ -461,7 +467,7 @@ export const AboutStyles = StyleSheet.create({
     marginTop: 10,
     backgroundColor: '#105410',
     borderRadius: 30,
-    width: '98%',
+    width: '92%',
     opacity: 0.8,
   },
   aboutText: {
