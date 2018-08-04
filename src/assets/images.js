@@ -12,6 +12,7 @@ const images = {
   sbsc: require('./img/sbsc.png'),
   techno : require('./img/technoverse.png'),
   logo: require('./img/small_logo.png'),
+  naijabdc: require('./img/naijabdc.png'),
 };
 
 

@@ -77,7 +77,19 @@ export const DrawerStack = DrawerNavigator({
   contentOptions: {
     labelStyle: styles.drawerText,
     itemStyle: styles.item,
-  }
+  },
+  navigationOptions: () => ({
+    headerTitle: (
+      <View style={styles.headerTitleStyle}>
+        <Image
+          style={styles.imageStyle}
+          source={Images.naijabdc}
+        />
+      </View>
+    ),
+    headerTintColor: 'white',
+    gesturesEnabled: false,
+  })
 });
 
 const DrawerNavigation = StackNavigator({

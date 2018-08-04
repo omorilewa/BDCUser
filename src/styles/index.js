@@ -20,6 +20,15 @@ export const NavStyles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'OpenSans-Regular',
   },
+  imageStyle: {
+    width: 145,
+    height: 30
+  },
+  headerTitleStyle: {
+    flex: 1,
+    alignItems:'center'
+
+  },
   sbsc: {
     width: 80,
     height: 45,
