@@ -4,7 +4,9 @@ import {
   TouchableHighlight,
   ImageBackground,
   View,
-  Dimensions
+  Dimensions,
+  Image,
+  Text
 } from 'react-native';
 import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
 import { Icon } from 'native-base';
@@ -37,14 +39,29 @@ const drawerButton = (navigation) =>
   </TouchableHighlight>;
 
 const CustomDrawerContentComponent = (props) =>
-  <ImageBackground
-    source={Images.background}
-    style={{ width: Dimensions.get('window').width }}
-  >
-    <View style={styles.drawerView}>
-      <DrawerItems {...props} activeBackgroundColor='rgba(0,0,0,.4)' />
+  <View style={styles.flexDrawer}>
+    <View style={styles.bgImageView}>
+      <Image style={styles.bgImage}
+        source={Images.background}
+      />
     </View>
-  </ImageBackground>
+    <View style={styles.transparent}>
+      <View style={styles.drawerView}>
+        <DrawerItems {...props} activeBackgroundColor='rgba(0,0,0,.5)' />
+        <View style={styles.outerCover}>
+          <View style={styles.brand}>
+            <Text style={styles.whiteLight}>Powered By:</Text>
+            <View style={styles.hr}></View>
+          </View>
+          <View style={styles.logoView}>
+            <Image style={styles.logo} source={Images.logo} />
+            <Image style={styles.sbsc} source={Images.sbsc} />
+            <Image style={styles.technoverse} source={Images.techno} />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
   ;
 
 export const DrawerStack = DrawerNavigator({
@@ -55,11 +72,24 @@ export const DrawerStack = DrawerNavigator({
   gesturesEnabled: false,
   drawerBackgroundColor: 'black',
   contentComponent: CustomDrawerContentComponent,
+  drawerWidth: Dimensions.get('window').width - 70,
   drawerPosition: 'right',
   contentOptions: {
     labelStyle: styles.drawerText,
     itemStyle: styles.item,
-  }
+  },
+  navigationOptions: () => ({
+    headerTitle: (
+      <View style={styles.headerTitleStyle}>
+        <Image
+          style={styles.imageStyle}
+          source={Images.naijabdc}
+        />
+      </View>
+    ),
+    headerTintColor: 'white',
+    gesturesEnabled: false,
+  })
 });
 
 const DrawerNavigation = StackNavigator({

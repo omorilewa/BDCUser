@@ -20,12 +20,83 @@ export const NavStyles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'OpenSans-Regular',
   },
+  imageStyle: {
+    width: 145,
+    height: 30
+  },
+  headerTitleStyle: {
+    flex: 1,
+    alignItems:'center'
+
+  },
+  sbsc: {
+    width: 80,
+    height: 45,
+    marginTop: 5
+  },
+  technoverse: {
+    width: 60,
+    height: 48,
+    marginTop: 5
+  },
+  logo: {
+    width: 50,
+    height: 47,
+    marginTop: 5
+  },
+  bgImageView: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%'
+  },
+  outerCover: {
+    paddingRight: '15%',
+    paddingLeft: '15%',
+    paddingBottom: '5%',
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,.5)',
+    width:'100%',
+  },
+  flexDrawer: {
+    flex: 1
+  },
+  logoView: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end'
+  },
+  hr: {
+    borderBottomWidth: 3,
+    borderBottomColor: '#4b5649',
+    height: 20,
+    width: 50
+  },
+  transparent: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    justifyContent: 'center'
+  },
+  bgImage: {
+    flex: 1,
+    resizeMode: 'cover'
+  },
   item: {
     width: '100%',
     borderBottomColor: '#1e331a',
     borderBottomWidth: 1,
     paddingTop: 12,
     paddingBottom: 12,
+  },
+  brand: {
+    flex: 1,
+    marginTop: '90%',
+    alignItems: 'center'
+  },
+  whiteLight: {
+    color: '#4b5649'
   },
   imagebg: {
     width: '100%',
@@ -77,11 +148,65 @@ export const RateScreenStyles = StyleSheet.create({
   },
   imagebg: {
     width: '100%',
-    height: '100%',
+    height: '80%',
   },
   currView: {
     width: '100%',
     height: '80%'
+  },
+  bgImageView: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%'
+  },
+  flexDrawer: {
+    flex: 1
+  },
+  resize: {
+    // flex: 1,
+    resizeMode: 'cover'
+  },
+  transparent: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    justifyContent: 'center'
+  },
+  fullWidth: {
+    width: '100%',
+    marginBottom: 5
+  },
+  powered: {
+    flexDirection: 'row',
+    paddingLeft: '15%',
+    paddingRight: '15%',
+    paddingTop: 5,
+    paddingBottom: 5,
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  pText: {
+    color: '#4b5649',
+    fontSize: 10,
+    borderWidth: 0.5,
+    borderLeftColor: '#4b5649',
+    borderBottomColor: '#4b5649',
+    borderRightColor: '#4b5649',
+    borderTopColor: '#4b5649',
+    marginRight: 10,
+    marginLeft: 10,
+    padding: 3,
+    height: 22
+  },
+  footer: {
+    color: 'white',
+    fontSize: 10,
+  },
+  vr: {
+    borderLeftWidth: 1,
+    borderLeftColor: 'white',
+    height: 15,
   },
   cut: {
     width: '100%'
@@ -198,6 +323,7 @@ export const RateScreenStyles = StyleSheet.create({
     width: 14,
     height: 14,
     marginTop: 2,
+    marginRight: 3,
     borderRadius: 4,
   }
 });
@@ -320,9 +446,15 @@ export const GeneralStyles = StyleSheet.create({
 
 export const AboutStyles = StyleSheet.create({
   container: {
-    height: '100%',
     flex: 1,
     alignItems: 'center'
+  },
+  scrollContainer: {
+    height: '70%',
+  },
+  scrollContent: {
+    alignItems: 'center',
+    paddingTop: 10
   },
   cta: {
     color: 'white',
@@ -344,7 +476,7 @@ export const AboutStyles = StyleSheet.create({
     marginTop: 10,
     backgroundColor: '#105410',
     borderRadius: 30,
-    width: '98%',
+    width: '92%',
     opacity: 0.8,
   },
   aboutText: {

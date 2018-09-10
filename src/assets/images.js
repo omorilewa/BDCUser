@@ -9,6 +9,10 @@ const images = {
   eur: require('./img/eur.png'),
   yen: require('./img/yen.png'),
   btn: require('./img/btn.png'),
+  sbsc: require('./img/sbsc.png'),
+  techno : require('./img/technoverse.png'),
+  logo: require('./img/small_logo.png'),
+  naijabdc: require('./img/naijabdc.png'),
 };
 
 
