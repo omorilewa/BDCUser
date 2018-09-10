@@ -4,7 +4,7 @@ import { ApolloLink } from 'apollo-link';
 import { onError } from 'apollo-link-error';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-const uri = 'https://bdc-api.herokuapp.com/api/graphql';
+const uri = 'https://bdc-rate-engine.appspot.com/api/graphql';
 
 // create a new httpLink accepting the uri as a config option
 const httpLink = new HttpLink({ uri });

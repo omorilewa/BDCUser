@@ -165,7 +165,7 @@ export const RateScreenStyles = StyleSheet.create({
     flex: 1
   },
   resize: {
-    flex: 1,
+    // flex: 1,
     resizeMode: 'cover'
   },
   transparent: {
